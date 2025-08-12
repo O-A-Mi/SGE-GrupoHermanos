@@ -9,7 +9,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
+          <Route path={jsonRoute.Configuracao}>
+            <Route path={jsonRoute.Geral}>
+              <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
+            </Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
