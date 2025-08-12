@@ -4,6 +4,7 @@ import { InputPadrao } from "../../../../components/InputPadrao";
 import TabelaPadrao from "../../../../components/TabelaPadrao";
 import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
 import * as Icones from "../../../../components/Icones";
+import styles from './PerguntasRespostas.module.css';
 const PerguntasRespostas = () => {
 
     const status = [
@@ -23,6 +24,28 @@ const PerguntasRespostas = () => {
         {value: "pergunta", label: "Pergunta"},
         {value: "titulo", label: "Título"},
     ];
+    
+    const tableCollumns = [
+        { value: "titulo", name: "Titulo da pergunta", align: "center", sortable: true },
+        { value: "declaracao", name: "Declaração Pertencente", align: "center", sortable: true },
+        { value: "visualiza", name: "Quem Visualiza", align: "center", sortable: true },
+        { value: "pergunta", name: "Pergunta", align: "center", sortable: true },
+        { value: "ordem", name: "Ordem de Aparecimento", align: "center", sortable: true },
+        { value: "status", name: "Status", align: "center", sortable: true },
+    ]
+
+    const tableData = [
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        }
+    ]
+
+
 
     return(
         <>
@@ -44,8 +67,8 @@ const PerguntasRespostas = () => {
                 </div>
 
             <div>
-                <div>
-                    <button>
+                <div className={styles.btnGroup}>
+                    <button className={styles.btn}>
                         <Icones.IconFile />
                     </button>
                     <button>
@@ -57,7 +80,7 @@ const PerguntasRespostas = () => {
                 </div>
             </div>
 
-            <div>
+            <div className={styles.btnGroup}>
                 <button>
                     <Icones.IconHide />
                 </button>
@@ -76,7 +99,12 @@ const PerguntasRespostas = () => {
                 <button>
                     <Icones.IconExport />
                 </button>
-                <TabelaPadrao />
+            </div>
+            <div>
+                <TabelaPadrao
+                tabelaId="status"
+                columns={tableCollumns}
+                data={tableData}/>
                 <PaginacaoNumerados />
             </div>
         
