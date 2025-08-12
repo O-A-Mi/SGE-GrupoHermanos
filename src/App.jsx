@@ -3,6 +3,7 @@ import Status from './pages/Configuracao/Geral/Status';
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
 import Home from './pages';
 import { jsonRoute } from './utils/json';
+import Departamento from './pages/Configuracao/Geral/Departamento';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path={jsonRoute.Geral}>
               <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
               <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} />
+              <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} />
             </Route>
           </Route>
         </Routes>
