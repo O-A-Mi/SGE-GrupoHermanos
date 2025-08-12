@@ -4,8 +4,14 @@ import TabelaPadrao from '../../../../components/TabelaPadrao'
 function Departamento() {
 
   const tabelaColumns = [
-    { 
-      value: 'nome', 
+    {
+      value: 'status',
+      name: 'Status do departamento',
+      align: 'center',
+      sortable: true
+    },
+    {
+      value: 'nome',
       name: 'Nome do Departamento',
       align: 'center',
       sortable: true,
@@ -13,10 +19,15 @@ function Departamento() {
   ]
 
   const tabelaDados = [
-    {nome: 'Suporte'},
-    {nome: 'Jurídico'},
-    {nome: 'Diretoria'},
-    {nome: 'Financeiro'}
+    { status: 'Ativo', nome: 'Suporte' },
+    { status: 'Ativo', nome: 'Jurídico' },
+    { status: 'Suspenso', nome: 'Jurídico' },
+    { status: 'Ativo', nome: 'Diretoria' },
+    { status: 'Ativo', nome: 'Financeiro' },
+    { status: 'Inativo', nome: 'Comercial' },
+    { status: 'Cancelado', nome: 'Financeiro' },
+    { status: 'Cancelado', nome: 'Financeiro' },
+    { status: 'Cancelado', nome: 'Financeiro' }
   ]
 
   return (
@@ -26,10 +37,19 @@ function Departamento() {
         <h2 className="subtitle">Adicione, edite ou remova departamentos</h2>
       </div>
       <div className="container">
-        <TabelaPadrao 
+        <TabelaPadrao
           tabelaId="departamentos-config"
-          columns={tabelaColumns}  
+          columns={tabelaColumns}
           data={tabelaDados}
+          options={{
+            cardsPerPage: 10,
+            showPagination: true,
+            showExport: true,
+            fileName: "departamentos",
+            showColumnsSelector: true,
+            showSearch: true,
+            toolbar: true
+          }}
         />
       </div>
     </>
