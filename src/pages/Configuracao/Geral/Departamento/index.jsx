@@ -1,7 +1,12 @@
 import styles from './Departamento.module.css'
 import TabelaPadrao from '../../../../components/TabelaPadrao'
+import { UseInputPadrao } from '../../../../components/InputPadrao'
 
 function Departamento() {
+
+  function handleRowClick() {
+    alert("Clicado")
+  }
 
   const tabelaColumns = [
     {
@@ -48,7 +53,8 @@ function Departamento() {
             fileName: "departamentos",
             showColumnsSelector: true,
             showSearch: true,
-            toolbar: true
+            toolbar: true,
+            rowOnClick: handleRowClick
           }}
         />
       </div>
