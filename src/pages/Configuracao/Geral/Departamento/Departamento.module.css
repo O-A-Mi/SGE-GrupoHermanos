@@ -1,0 +1,18 @@
+.grid{
+    display: grid;
+}
+
+.option{
+    border: 0;
+}
+
+.label{
+    font: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.select{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: rgb(255, 0, 0);
+    padding: 10px;
+}
