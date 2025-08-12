@@ -6,7 +6,7 @@ function StatusSelect({ options, placeholder, onChange }){
         <Select 
             options={options}
             onChange={onChange}
-            placeholder="Selecione..."
+            placeholder={placeholder}
             isClearable
         />
     );

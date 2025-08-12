@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+  font-weight: 500;
+
+  color-scheme: light dark;
+  color: #242424;
+  background-color: #FFFFFF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --azul-padrao: #0736C4;
+  --azul-medio: #E6ECFF;
+  --azul-escuro: #000074;
+  --azul-b: #638AFF;
+  --link-azul: #2994D0;
+  --azul-claro: #FAF9FF;
+  --cinza-padrao: #625F60;
+  --cinza-escuro: #444444;
+  --cinza-claro: #CCCDCE;
+  --cinza-claro-2: #FAF9FF;
+  --erro: #E51346;
+  --rosa-alerta: #FF00BB;
+  --branco: #FFFFFF;
+
+  --roxo-azulado: #7C00EF;
+  --azul-frio: #0B43BC;
+  --roxo: #73008D;
+  --certo: #00A700;
+  --pendente: #DA6A00;
+
+  --linear-azul-padrao: linear-gradient(270deg, #0736C4 0%, #1D78F0 100%);
+  --linear-roxo-claro: linear-gradient(270deg, #450085 0%, #9625FF 100%);
+  --linear-azul-frio: linear-gradient(270deg, #003461 0%, #0B43BC 100%);
+  --linear-roxo-escuro: linear-gradient(270deg, #2A0252 0%, #73008D 100%);
+  --box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) , 0px 4px 6px -4px rgba(0, 0, 0, 0.1) ;
+}
