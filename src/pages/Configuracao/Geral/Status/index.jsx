@@ -1,5 +1,5 @@
 import { UseInputMask, InputPadrao, UseInputPadrao } from '../../../../components/InputPadrao';
-import { TabelaPadrao } from '../../../../components/TabelaPadrao';
+import TabelaPadrao from '../../../../components/TabelaPadrao';
 import { useState, useRef } from 'react';
 import styles from './Status.module.css';
 
@@ -94,35 +94,6 @@ const Status = () => {
                     columns={tableCollumns}
                     data={tableData}
                 />
-
-                {/*
-                    TabelaPadrao = ({ tabelaId, columns, data, footer, options = {} }) => {
-                        const defaultOptions = {
-                            fileName: "relatorio",
-                            cardsPerPage: 10,
-                            cardsPerPageOptions: [10, 25, 50, 100],
-                            showPagination: true,
-                            showHeader: true,
-                            showFooter: false,
-                            toolbar: true,
-                            toolbarPosition: "right",
-                            showPaginationSwitch: false,
-                            showSearch: false,
-                            showRefresh: false,
-                            showToggleView: false,
-                            showColumnsSelector: false,
-                            showExport: false,
-                            showFilter: false,
-                            showGuardaCampos: false,
-                            additionalButtons: [],
-                            paginationEnabled: true,
-                            tableView: "table",
-                            customView: null,
-                            rowOnClick: false,
-                            rowSelection: false,
-                            rowSelectionMode: "multiple",
-                            onRowSelectChange: null,
-                */}
             </div>
         </>
     )
