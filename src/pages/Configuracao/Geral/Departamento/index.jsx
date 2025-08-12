@@ -3,27 +3,34 @@ import TabelaPadrao from '../../../../components/TabelaPadrao'
 
 function Departamento() {
 
+  const tabelaColumns = [
+    { 
+      value: 'nome', 
+      name: 'Nome do Departamento',
+      align: 'center',
+      sortable: true,
+    },
+  ]
+
+  const tabelaDados = [
+    {nome: 'Suporte'},
+    {nome: 'Jurídico'},
+    {nome: 'Diretoria'},
+    {nome: 'Financeiro'}
+  ]
+
   return (
     <>
-      <div className="header">
+      <div className={styles.headerLocal}>
         <h1 className="title">Abre Departamento</h1>
         <h2 className="subtitle">Adicione, edite ou remova departamentos</h2>
       </div>
       <div className="container">
-        <div className={styles.grid}>
-          <label htmlFor="departamentoStatus" className={styles.label}>Status</label>
-          <div>
-            <select name="departamentoStatus" id="departamentoStatus" className={styles.select}>
-              <option value="ativo" className={styles.option}>ativo</option>
-              <option value="cancelado" className={styles.option}>cancelado</option>
-              <option value="inadimplente" className={styles.option}>inadimplente</option>
-              <option value="suspenso" className={styles.option}>suspenso</option>
-            </select>
-          </div>
-        </div>
-        <TabelaPadrao>
-          
-        </TabelaPadrao>
+        <TabelaPadrao 
+          tabelaId="departamentos-config"
+          columns={tabelaColumns}  
+          data={tabelaDados}
+        />
       </div>
     </>
   )

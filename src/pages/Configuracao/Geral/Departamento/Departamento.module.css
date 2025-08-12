@@ -16,3 +16,9 @@
     border-color: rgb(255, 0, 0);
     padding: 10px;
 }
+
+.headerLocal{
+  margin: 2rem 1rem;
+  border-bottom: 1px solid black;
+  height: 7.5rem;
+}
