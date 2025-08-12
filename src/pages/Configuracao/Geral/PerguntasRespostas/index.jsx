@@ -66,45 +66,33 @@ const PerguntasRespostas = () => {
                     <InputPadrao type="text" />
                 </div>
 
-            <div>
-                <div className={styles.btnGroup}>
-                    <button className={styles.btn}>
-                        <Icones.IconFile />
-                    </button>
-                    <button>
-                        <Icones.IconReply />
-                    </button>
-                    <button>
-                        <Icones.IconServer />
-                    </button>
-                </div>
-            </div>
-
-            <div className={styles.btnGroup}>
-                <button>
-                    <Icones.IconHide />
-                </button>
-                <button>
-                    <Icones.IconSearch />
-                </button>
-                <button>
-                    <Icones.IconAlternar />
-                </button>
-                <button>
-                    <Icones.IconColuna />
-                </button>
-                <button>
-                    <Icones.IconPrint />
-                </button>
-                <button>
-                    <Icones.IconExport />
-                </button>
-            </div>
+   
             <div>
                 <TabelaPadrao
                 tabelaId="status"
                 columns={tableCollumns}
-                data={tableData}/>
+                data={tableData}
+                options={{
+                    cardsPerPage: 10,
+                    showPagination: true,
+                    showExport: true,
+                    fileName: "departamentos",
+                    showPagination: true,
+                    showHeader: true,
+                    showFooter: true,
+                    toolbar: true,
+                    toolbarPosition: "right",
+                    showPaginationSwitch: true,
+                    showSearch: true,
+                    showRefresh: true,
+                    showToggleView: true,
+                    showColumnsSelector: true,
+                    showExport: true,
+                    showFilter: true,
+                    showGuardaCampos: true,
+                    paginationEnabled: true,
+                  }}
+                  />
                 <PaginacaoNumerados />
             </div>
         
