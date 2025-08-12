@@ -4,6 +4,7 @@ import { InputPadrao } from "../../../../components/InputPadrao";
 import TabelaPadrao from "../../../../components/TabelaPadrao";
 import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
 import * as Icones from "../../../../components/Icones";
+import styles from './PerguntasRespostas.module.css';
 const PerguntasRespostas = () => {
 
     const status = [
@@ -23,6 +24,28 @@ const PerguntasRespostas = () => {
         {value: "pergunta", label: "Pergunta"},
         {value: "titulo", label: "Título"},
     ];
+    
+    const tableCollumns = [
+        { value: "titulo", name: "Titulo da pergunta", align: "center", sortable: true },
+        { value: "declaracao", name: "Declaração Pertencente", align: "center", sortable: true },
+        { value: "visualiza", name: "Quem Visualiza", align: "center", sortable: true },
+        { value: "pergunta", name: "Pergunta", align: "center", sortable: true },
+        { value: "ordem", name: "Ordem de Aparecimento", align: "center", sortable: true },
+        { value: "status", name: "Status", align: "center", sortable: true },
+    ]
+
+    const tableData = [
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        }
+    ]
+
+
 
     return(
         <>
@@ -43,40 +66,33 @@ const PerguntasRespostas = () => {
                     <InputPadrao type="text" />
                 </div>
 
+   
             <div>
-                <div>
-                    <button>
-                        <Icones.IconFile />
-                    </button>
-                    <button>
-                        <Icones.IconReply />
-                    </button>
-                    <button>
-                        <Icones.IconServer />
-                    </button>
-                </div>
-            </div>
-
-            <div>
-                <button>
-                    <Icones.IconHide />
-                </button>
-                <button>
-                    <Icones.IconSearch />
-                </button>
-                <button>
-                    <Icones.IconAlternar />
-                </button>
-                <button>
-                    <Icones.IconColuna />
-                </button>
-                <button>
-                    <Icones.IconPrint />
-                </button>
-                <button>
-                    <Icones.IconExport />
-                </button>
-                <TabelaPadrao />
+                <TabelaPadrao
+                tabelaId="status"
+                columns={tableCollumns}
+                data={tableData}
+                options={{
+                    cardsPerPage: 10,
+                    showPagination: true,
+                    showExport: true,
+                    fileName: "departamentos",
+                    showPagination: true,
+                    showHeader: true,
+                    showFooter: true,
+                    toolbar: true,
+                    toolbarPosition: "right",
+                    showPaginationSwitch: true,
+                    showSearch: true,
+                    showRefresh: true,
+                    showToggleView: true,
+                    showColumnsSelector: true,
+                    showExport: true,
+                    showFilter: true,
+                    showGuardaCampos: true,
+                    paginationEnabled: true,
+                  }}
+                  />
                 <PaginacaoNumerados />
             </div>
         
