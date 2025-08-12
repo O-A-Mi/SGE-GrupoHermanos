@@ -1,8 +1,5 @@
-import { carregarLinks } from '../db/carregarGeral.jsx';
-import { getBaseConfig } from './utilsConfig.js';
 import toastMessage from '../assets/toast-ui/toast.js';
 
-const { baselink, companyId, endpoints } = getBaseConfig();
 
 export const formatarUsuarioLogin = (str) => {
   // somente CPF e CNPJ vão ser formatados, strings com letras retornam normalmente.
@@ -262,25 +259,6 @@ export const handleResizeTabelaAvulsa = debounce((tabelaId, container) => {
   const fullScreenWidth = mainContainer.parentElement.offsetWidth - parseFloat(elementComputedStyle.paddingLeft) - parseFloat(elementComputedStyle.paddingRight);
   tabelaContainer.style.maxWidth = `${fullScreenWidth}px`;
 })
-
-export const cepAPI = (cep, callback) => {
-  window.callback = callback;
-  
-  const params = {
-    cep: cep
-  };
-
-  carregarLinks(
-    'carregarEndereco',
-    `${baselink}${endpoints.buscarEndereco}`,
-    params,
-    'callback'
-  );
-
-  return () => {
-    delete window.callback;
-  };
-}
 
 export const validarCampos = arrayCamposObrigatorios => {
   /*arrayCamposObrigatorios = [

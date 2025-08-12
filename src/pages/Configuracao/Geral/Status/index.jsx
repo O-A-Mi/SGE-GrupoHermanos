@@ -1,6 +1,16 @@
-
+import { UseInputMask, UseInputPadrao } from '../../../../components/InputPadrao';
+import toastMessage from '../../../../assets/toast-ui/toast';
 
 const Status = () => {
+    const [cpfCnpj, handleCpfCnpjChange, cpfCnpjRef] = UseInputMask("999.999.999-99 | 99.999.999/9999-99", "number");
+
+    function checkValidaCPFCNPJ() {
+        if(cpfCnpj.length > 0){
+            handleCpfCnpjChange({ target: { value: '' } });
+            toastMessage(`CPF/CNPJ inválido.`, "warning");
+        }
+    }
+
     return (
         <>
             <div className="header">
@@ -12,7 +22,7 @@ const Status = () => {
                 </div>
             </div>
             <div className="container">
-                a
+                <UseInputPadrao label={'CPF/CNPJ cadastrado'} required identifier="cpfCnpj" value={cpfCnpj} onBlur={checkValidaCPFCNPJ} onChange={handleCpfCnpjChange} inputRef={cpfCnpjRef} icon="fas fa-id-card"/>
             </div>
         </>
     )
