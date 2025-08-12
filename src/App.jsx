@@ -13,7 +13,7 @@ function App() {
           <Route path={jsonRoute.Configuracao}>
             <Route path={jsonRoute.Geral}>
               <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
-              <Route path={jsonRouter.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} />
+              <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} />
             </Route>
           </Route>
         </Routes>
