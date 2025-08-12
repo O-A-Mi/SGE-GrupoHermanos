@@ -1,5 +1,5 @@
 import { UseInputMask, InputPadrao, UseInputPadrao } from '../../../../components/InputPadrao';
-import { TabelaPadrao } from '../../../../components/TabelaPadrao';
+import  TabelaPadrao from '../../../../components/TabelaPadrao';
 import { useState, useRef } from 'react';
 import styles from './Status.module.css';
 

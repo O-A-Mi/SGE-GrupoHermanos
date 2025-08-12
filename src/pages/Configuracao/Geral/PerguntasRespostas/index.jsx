@@ -1,6 +1,9 @@
 import React from "react";
-import StatusSelect from "../../../../components/StatusSelect/"
-
+import StatusSelect from "../../../../components/StatusSelect/";
+import { InputPadrao } from "../../../../components/InputPadrao";
+import TabelaPadrao from "../../../../components/TabelaPadrao";
+import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
+import { IconReply, IconFile, IconServer } from "../../../../components/Icones";
 const PerguntasRespostas = () => {
 
     const status = [
@@ -36,13 +39,36 @@ const PerguntasRespostas = () => {
                 <div>
                     <StatusSelect options={perguntas} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
                 </div>
-                <div className="subtitle">Texto</div>
+                <InputPadrao type="text" />
+            </div>
+
+            <div>
                 <div>
-                    <input type="text" />
+                    <button>
+                    <IconFile />
+                    </button>
+                    <button>
+                        <IconReply />
+                    </button>
+                    <button>
+                        <IconServer />
+                    </button>
                 </div>
             </div>
+
+            <div>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <TabelaPadrao />
+                <PaginacaoNumerados />
+            </div>
+        
         </>
-    )
+    );
 }
 
 export default PerguntasRespostas;
