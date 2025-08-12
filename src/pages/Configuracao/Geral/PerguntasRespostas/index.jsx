@@ -3,7 +3,7 @@ import StatusSelect from "../../../../components/StatusSelect/";
 import { InputPadrao } from "../../../../components/InputPadrao";
 import TabelaPadrao from "../../../../components/TabelaPadrao";
 import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
-import { IconReply, IconFile, IconServer } from "../../../../components/Icones";
+import * as Icones from "../../../../components/Icones";
 const PerguntasRespostas = () => {
 
     const status = [
@@ -38,31 +38,44 @@ const PerguntasRespostas = () => {
                 <div className="subtitle">Pesquisar</div>
                 <div>
                     <StatusSelect options={perguntas} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
+                <div className="subtitle">Texto</div>
                 </div>
-                <InputPadrao type="text" />
-            </div>
+                    <InputPadrao type="text" />
+                </div>
 
             <div>
                 <div>
                     <button>
-                    <IconFile />
+                        <Icones.IconFile />
                     </button>
                     <button>
-                        <IconReply />
+                        <Icones.IconReply />
                     </button>
                     <button>
-                        <IconServer />
+                        <Icones.IconServer />
                     </button>
                 </div>
             </div>
 
             <div>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+                <button>
+                    <Icones.IconHide />
+                </button>
+                <button>
+                    <Icones.IconSearch />
+                </button>
+                <button>
+                    <Icones.IconAlternar />
+                </button>
+                <button>
+                    <Icones.IconColuna />
+                </button>
+                <button>
+                    <Icones.IconPrint />
+                </button>
+                <button>
+                    <Icones.IconExport />
+                </button>
                 <TabelaPadrao />
                 <PaginacaoNumerados />
             </div>

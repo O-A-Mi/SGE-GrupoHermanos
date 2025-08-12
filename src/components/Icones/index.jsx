@@ -21,5 +21,42 @@ export function IconFile(){
 export function IconServer(){
     return(
         <FontAwesomeIcon icon={['fas', 'server']} />
-    )
+    );
 }
+
+export function IconSearch(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'magnifying-glass']} /> 
+    );
+}
+
+export function IconAlternar(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'align-justify']} />
+    );
+}
+
+export function IconColuna(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'table-columns']} />
+    );
+}
+
+export function IconPrint(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'print']} />
+    );
+}
+
+export function IconExport(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'file-export']} />
+    );
+}
+
+export function IconHide(){
+    return(
+        <FontAwesomeIcon icon={['far', 'eye-slash']} />
+    );
+}
+
