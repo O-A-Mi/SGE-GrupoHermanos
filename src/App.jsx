@@ -1,14 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
+import './assets/icons/css/all.css';
 import Status from './pages/Configuracao/Geral/Status';
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
 import Home from './pages';
 import { jsonRoute } from './utils/json';
 import Departamento from './pages/Configuracao/Geral/Departamento';
+import NavBar from './components/Navigator';
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path={jsonRoute.Configuracao}>
