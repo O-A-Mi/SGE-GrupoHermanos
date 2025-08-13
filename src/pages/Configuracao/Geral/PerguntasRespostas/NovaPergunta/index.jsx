@@ -10,6 +10,19 @@ import styles from '../PerguntasRespostas.module.css';
 const NovaPergunta = () => {
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
+    /*
+    const location = useLocation();
+    const handleNavigate = useCallback((link) => {
+        navigate(link);
+    }, [navigate]);
+
+    const isNovaPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovaPergunta2);
+
+    if (isNovaPerguntaRoute) {
+        return <Outlet />;
+    }
+    */
+
     const status = [
         {value: "todos", label: "TODOS"},
         {value: "ativo" , label: "ATIVO"},
@@ -61,6 +74,10 @@ const NovaPergunta = () => {
             setCount(valor);
         }
     };
+
+    const handleSalvar = () => {
+        alert("Salvo");
+    }
     
     const handleVoltar = () => {
         navigate(-1);
@@ -102,9 +119,9 @@ const NovaPergunta = () => {
             <div className="subtitle">Texto</div>
             <InputPadrao type="textarea" />
             <div className={styles.btnGroup}>
-                <button className={styles.btnGravar}><Icones.IconFile />Gravar</button>
+                <button className={styles.btnGravar} onClick={handleSalvar}><Icones.IconFile />Gravar</button>
                 <button className={styles.btnVoltar} onClick={handleVoltar}><Icones.IconReply />Voltar</button>
-                <button className={styles.btnProximo}><Icones.IconRight />Proximo</button>
+                <button className={styles.btnProximo} onClick={() => alert("Em progresso")}><Icones.IconRight />Proximo</button>
             </div>
         </div>
         </>

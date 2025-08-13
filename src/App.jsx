@@ -21,8 +21,6 @@ import EdicaoStatus from './pages/Configuracao/Geral/Status/EdicaoStatus';
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
 import NovaPergunta from './pages/Configuracao/Geral/PerguntasRespostas/NovaPergunta';
 
-
-
 function App() {
   return (
     <>
@@ -38,7 +36,8 @@ function App() {
               <Route path={jsonRoute.Configuracao_Geral_NovoStatus} element={<NovoStatus />} />
 
               <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} >
-                <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />} />
+                <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />}>
+                </Route>  
               </Route>
 
               <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} >

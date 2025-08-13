@@ -14,5 +14,6 @@ export const jsonRoute = {
 
     // Pergunta Resposta e Nova Pergunta
     "Configuracao_Geral_PerguntasRespostas": "perguntas-respostas",
-    "Configuracao_Geral_NovaPergunta": "nova-pergunta"
+    "Configuracao_Geral_NovaPergunta": "nova-pergunta",
+    "Configuracao_Geral_NovaPergunta2": "nova-pergunta2"
 }
