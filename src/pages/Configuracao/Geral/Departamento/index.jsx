@@ -1,13 +1,15 @@
 import styles from './Departamento.module.css'
 import TabelaPadrao from '../../../../components/TabelaPadrao'
-import { InputPadrao } from '../../../../components/InputPadrao'
-import StatusSelect from '../../../../components/StatusSelect'
+import { InputPadrao, UseInputMask } from '../../../../components/InputPadrao'
 import { Outlet, useLocation, useNavigate } from 'react-router'
 import { jsonRoute } from '../../../../utils/json'
-import { useCallback } from 'react'
+import { useCallback} from 'react'
+
 
 function Departamento() {
 
+  const [filterSelect, setFilterSelect, filterSelectRef] = UseInputMask()
+  const [filterText, setFilterText, filterTextRef] = UseInputMask()
   const navigate = useNavigate();
   const location = useLocation();
   const handleNavigate = useCallback((link) => {
@@ -15,7 +17,6 @@ function Departamento() {
   }, [navigate]);
 
   const isNovoDepartamentoRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovoDepartamento);
-
   if (isNovoDepartamentoRoute) {
     return <Outlet />;
   }
@@ -55,6 +56,15 @@ function Departamento() {
     { status: 'Cancelado', nome: 'Financeiro' }
   ]
 
+
+  function onChangeFilterSelect(e) {
+    setFilterSelect(e.target.value)
+  }
+
+  function onChangeFilterText(e) {
+    setFilterText(e.target.value)
+  }
+
   function handleRowClick(texto) {
     alert(texto)
   }
@@ -69,12 +79,25 @@ function Departamento() {
         <div>
           <div className={styles.label}><strong>Status</strong></div>
           <div>
-            <StatusSelect options={status} placeholder="Selecionar..." onChange={(e) => { e ? console.log(e.value) : null }} />
+            <InputPadrao 
+            type="select"
+            options={status}
+            value={filterSelect}
+            inputRef={filterSelectRef}
+            searchable={false}
+            defaultSelect={false}
+            onChange={onChangeFilterSelect}
+            />
           </div>
         </div>
         <div>
           <div className={styles.label}><strong>Nome</strong></div>
-          <InputPadrao type='search' />
+          <InputPadrao
+            type='search'
+            value={filterText}
+            inputRef={filterTextRef}
+            onChange={onChangeFilterText}
+          />
         </div>
       </div>
       <div>
