@@ -5,9 +5,11 @@ import TabelaPadrao from "../../../../components/TabelaPadrao";
 import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
 import * as Icones from "../../../../components/Icones";
 import styles from './PerguntasRespostas.module.css';
-import { Outlet, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
-//import { Outlet } from "react-router";
+import { Outlet, useNavigate, useLocation } from "react-router";
+
+import { jsonRoute } from "../../../../utils/json";
+
 const PerguntasRespostas = () => {
 
     const status = [
@@ -130,6 +132,16 @@ const PerguntasRespostas = () => {
     ]
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const handleNavigate = useCallback((link) => {
+        navigate(link);
+    }, [navigate]);
+
+    const isNovaPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovaPergunta);
+
+    if (isNovaPerguntaRoute) {
+        return <Outlet />;
+    }
 
     return(
         <>
@@ -177,9 +189,9 @@ const PerguntasRespostas = () => {
                     paginationEnabled: true,
                     additionalButtons: [{
                         title: "Novo",
-                        onClick: () => navigate("./NovaPergunta"),
+                        onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_PerguntasRespostas}/${jsonRoute.Configuracao_Geral_NovaPergunta}`),
                         icon: "fa fa-file",
-                        }],
+                    }],
                   }}
                   />
                 
