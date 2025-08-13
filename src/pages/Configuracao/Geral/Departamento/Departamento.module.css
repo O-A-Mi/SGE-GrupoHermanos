@@ -1,5 +1,7 @@
 .grid{
-    display: grid;
+    /* tá quebrado, arrumar depois*/
+    grid-auto-flow: column;
+    size: 100%;
 }
 
 .option{
@@ -21,4 +23,10 @@
   margin: 2rem 1rem;
   border-bottom: 1px solid black;
   height: 7.5rem;
+}
+
+/* Só pra ver se algo muda, extremamente feio 👍*/
+.teste{
+    color: red;
+    border-color: rgb(218, 23, 185);
 }
