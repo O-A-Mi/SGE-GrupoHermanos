@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import styles from "../Stepper/style.module.css";
-import { useAtendimento } from "../../context";
+//import { useAtendimento } from "../../context";
 import "../../assets/icons/css/all.css";
 
 const Stepper = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { dadosAtendimento } = useAtendimento();
+  //const { dadosAtendimento } = useAtendimento();
 
   const etapas = [
     {
@@ -50,6 +50,7 @@ const Stepper = () => {
     const saved = localStorage.getItem("atendimento-progresso-maximo");
     return saved ? parseInt(saved) : 0;
   });
+/*
 
   useEffect(() => {
     const progressoSalvo = localStorage.getItem("atendimento-progresso-maximo");
@@ -69,7 +70,7 @@ const Stepper = () => {
       }
     }
   }, [dadosAtendimento, location.pathname, navigate]);
-
+*/
   useEffect(() => {
     const handleStorageChange = () => {
       const saved = localStorage.getItem("atendimento-progresso-maximo");
