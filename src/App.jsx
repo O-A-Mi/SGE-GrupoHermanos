@@ -20,7 +20,6 @@ import EdicaoStatus from './pages/Configuracao/Geral/Status/EdicaoStatus';
 //Perguntas
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
 import NovaPergunta from './pages/Configuracao/Geral/PerguntasRespostas/NovaPergunta';
-import NovoDepartamento from './pages/Configuracao/Geral/Departamento/NovoDepartamento';
 
 function App() {
   return (
