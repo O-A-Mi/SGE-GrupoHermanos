@@ -147,8 +147,9 @@ const PerguntasRespostas = () => {
         <>
             <div className="header">
                 <div className="title">Abre Perguntas e Respostas</div>
-                <div className="subtitle">Teste</div>
+                <div className="subtitle">Teste</div>    
             </div>
+            
             <div className="conteiner">
                 <div className="subtitle">Status</div>
                 <div>

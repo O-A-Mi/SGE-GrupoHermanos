@@ -1,6 +1,8 @@
 const NovaPergunta = () => {
     return(
-        <h1>Teste!</h1>
+        <div className="header">
+            <div className="title">Perguntas e Respostas</div>
+        </div>
     );
 }
 
