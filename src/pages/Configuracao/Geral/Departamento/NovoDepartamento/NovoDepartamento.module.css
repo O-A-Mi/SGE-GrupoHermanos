@@ -1,0 +1,27 @@
+.grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 50px;
+}
+
+.option{
+    border: 0;
+}
+
+.label{
+    font: bolder;
+    padding-bottom: 10px;
+}
+
+.select{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: rgb(255, 0, 0);
+    padding: 10px;
+}
+
+.containerEdicao{
+    display: flex;
+    flex-direction: row;
+}
