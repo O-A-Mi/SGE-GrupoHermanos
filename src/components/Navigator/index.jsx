@@ -14,7 +14,7 @@ const Navigator = () => {
                     <Link to="/configuracao/geral/status" className={styles.navLink}>
                         <i className="fa-solid fa-gear"></i><p>Status</p>
                     </Link>
-                    <Link to="/configuracao/geral/perguntasRespostas" className={styles.navLink}>
+                    <Link to="/configuracao/geral/perguntas-respostas" className={styles.navLink}>
                         <i className="fa-solid fa-gear"></i><p>Perguntas e Respostas</p>
                     </Link>
                     <Link to="/configuracao/geral/departamento" className={styles.navLink}>
