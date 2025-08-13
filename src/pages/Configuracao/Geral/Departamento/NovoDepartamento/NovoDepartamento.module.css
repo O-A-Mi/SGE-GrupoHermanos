@@ -1,13 +1,7 @@
-.grid{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 2rem;
-    padding-left: 50px;
-}
-
-.option{
-    border: 0;
+.labelBig{
+    font: bolder;
+    padding-bottom: 10px;
+    width: 250px;
 }
 
 .label{
@@ -15,13 +9,17 @@
     padding-bottom: 10px;
 }
 
-.select{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-color: rgb(255, 0, 0);
-    padding: 10px;
-}
-
 .containerEdicao{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 25px;
+    row-gap: 10px;
+}
+
+.metade{
+    width: 50%;
+}
+
+.quarto{
+    width: 25%;
 }

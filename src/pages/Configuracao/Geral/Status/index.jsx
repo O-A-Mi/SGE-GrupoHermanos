@@ -1,7 +1,9 @@
 import { UseInputMask, InputPadrao } from '../../../../components/InputPadrao';
 import TabelaPadrao from '../../../../components/TabelaPadrao';
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import styles from './Status.module.css';
+import { Outlet, useNavigate, useLocation } from 'react-router';
+import { jsonRoute } from "../../../../utils/json";
 
 const Status = () => {
     const [filterSelect, setFilterSelect, filterSelectRef] = UseInputMask()
@@ -23,14 +25,20 @@ const Status = () => {
         { value: "congelamento_fi_status_e_tela", name: "Congelamento FI - Status e Tela", align: "center", sortable: true },
         { value: "mudar_status_da_proposta_para_ativo_a_traves_do_arquivo_retorno", name: "Mudar Status da proposta para Ativo através do Arquivo Retorno", align: "center", sortable: true },
         { value: "utiliza_na_tela_do_serasa", name: "Utiliza na Tela do Serasa", align: "center", sortable: true },
-        { value: "cria_lancamento_com_esse_status_qdo_regera_nosso_numero", name: "Cria Lançamento com esse Status qdo Regera Nosso Número", align: "center", sortable: true }
+        { value: "cria_lancamento_com_esse_status_qdo_regera_nosso_numero", name: "Cria Lançamento com esse Status qdo Regera Nosso Número", align: "center", sortable: true },
+        { value: "envia_automaticamente_para_backlist", name: "Envia automaticamente para BackList", align: "center", sortable: true },
+        { value: "utiliza_na_regua_de_inadimplencia", name: "Utiliza na régua de inadimplência", align: "center", sortable: true },
     ]
+    
+    const buildColor = (cor) => (
+        <div style={{ borderRadius: '50%', margin: 'auto', width: '20px', height: '20px', background: `#${cor}`}} />
+    )
 
-    const tableData = [
+    const [tableData, setTableData] = useState([
         {
-            descricao: "Aberto",
+            descricao: "A",
             tipo: "Aberto",
-            cor: "Aberto",
+            cor: buildColor('cf2786'),
             padrao: "Aberto",
             inativar_no_callcenter: "Aberto",
             desativar_tela: "Aberto",
@@ -39,12 +47,14 @@ const Status = () => {
             congelamento_fi_status_e_tela: "Aberto",
             mudar_status_da_proposta_para_ativo_a_traves_do_arquivo_retorno: "Aberto",
             utiliza_na_tela_do_serasa: "Aberto",
-            cria_lancamento_com_esse_status_qdo_regera_nosso_numero: "Aberto"
+            cria_lancamento_com_esse_status_qdo_regera_nosso_numero: "Aberto",
+            envia_automaticamente_para_backlist: "Aberto",
+            utiliza_na_regua_de_inadimplencia: "Aberto"
         },
         {
-            descricao: "Aberto",
+            descricao: "B",
             tipo: "Aberto",
-            cor: "Aberto",
+            cor: buildColor('756dd1'),
             padrao: "Aberto",
             inativar_no_callcenter: "Aberto",
             desativar_tela: "Aberto",
@@ -53,12 +63,14 @@ const Status = () => {
             congelamento_fi_status_e_tela: "Aberto",
             mudar_status_da_proposta_para_ativo_a_traves_do_arquivo_retorno: "Aberto",
             utiliza_na_tela_do_serasa: "Aberto",
-            cria_lancamento_com_esse_status_qdo_regera_nosso_numero: "Aberto"
+            cria_lancamento_com_esse_status_qdo_regera_nosso_numero: "Aberto",
+            envia_automaticamente_para_backlist: "Aberto",
+            utiliza_na_regua_de_inadimplencia: "Aberto"
         },
         {
-            descricao: "Aberto",
+            descricao: "C",
             tipo: "Aberto",
-            cor: "Aberto",
+            cor: buildColor('deb626'),
             padrao: "Aberto",
             inativar_no_callcenter: "Aberto",
             desativar_tela: "Aberto",
@@ -67,24 +79,36 @@ const Status = () => {
             congelamento_fi_status_e_tela: "Aberto",
             mudar_status_da_proposta_para_ativo_a_traves_do_arquivo_retorno: "Aberto",
             utiliza_na_tela_do_serasa: "Aberto",
-            cria_lancamento_com_esse_status_qdo_regera_nosso_numero: "Aberto"
+            cria_lancamento_com_esse_status_qdo_regera_nosso_numero: "Aberto",
+            envia_automaticamente_para_backlist: "Aberto",
+            utiliza_na_regua_de_inadimplencia: "Aberto"
         },
-    ]
+    ], [])
 
-    function onChangeFilterSelect(e) {
-        setFilterSelect(e.target.value)
+    const [tableFiltro, setTableFiltro] = useState([])
+
+    useEffect(() => {
+        setTableFiltro(tableData)
+    }, [tableData])
+
+    function filtrarDescricao(){ 
+        console.log('aqui'),
+        setTableFiltro(tableData.filter(
+            ({descricao}) => descricao.toLowerCase().includes(filterText.toLowerCase())
+        ))
     }
 
-    function onChangeFilterText(e) {
-        setFilterText(e.target.value)
-    }
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleNavigate = useCallback((link) => {
+        navigate(link);
+    }, [navigate]);
 
-    function addInfo(){
-        alert('Informação adicionada com sucesso!')
-    }
+    const isEdicaoPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovoStatus);
+    const isNovaPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovaPergunta);
 
-    function removeInfo(){
-        alert('Informação removida com sucesso!')
+    if (isNovaPerguntaRoute || isEdicaoPerguntaRoute){
+        return <Outlet />;
     }
 
     return (
@@ -105,22 +129,18 @@ const Status = () => {
                             <InputPadrao
                                 type="select"
                                 value={filterSelect}
-                                onChange={onChangeFilterSelect}
                                 inputRef={filterSelectRef}
                                 options={options}
                                 defaultSelect={false}
                                 searchable={false}
+                                onChange={setFilterSelect}
                             />
                         </div>
                         <div className={styles.contentColumn}>
                             <label className={styles.label}>Texto</label>
                             <InputPadrao
-                                type="text"
                                 value={filterText}
-                                onChange={onChangeFilterText}
-                                inputRef={filterTextRef}
-                                defaultSelect={false}
-                                searchable={false}
+                                onChange={setFilterText}
                             />
                         </div>
                     </div>
@@ -129,7 +149,7 @@ const Status = () => {
                     <TabelaPadrao 
                         tabelaId="status"
                         columns={tableCollumns}
-                        data={tableData}
+                        data={tableFiltro}
                         options={{
                             fileName: "status",
                             showPagination: true,
@@ -137,22 +157,26 @@ const Status = () => {
                             toolbar: true,
                             toolbarPosition: "right",
                             showPaginationSwitch: true,
-                            showSearch: true,
+                            showSearch: filtrarDescricao,
                             showToggleView: true,
                             showColumnsSelector: true,
                             showExport: true,
                             paginationEnabled: true,
                             tableView: "table",
-                            rowOnClick: false,
+                            rowOnClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_Status}/${jsonRoute.Configuracao_Geral_EdicaoStatus}`),
                             additionalButtons: [{
+                                title: "Imprimir",
+                                onClick: () => false,
+                                icon: "fa-solid fa-print"
+                            },{
                                 title: "Adicionar Nova Informação",
-                                onClick: addInfo,
+                                onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_Status}/${jsonRoute.Configuracao_Geral_NovoStatus}`),
                                 icon: "fa fa-plus"
                             },
                             {
-                                title: "Remover Informação",
-                                onClick: removeInfo,
-                                icon: "fa-solid fa-minus"
+                                title: "Voltar",
+                                onClick: () => navigate(-1),
+                                icon: "fa fa-arrow-left"
                             }]
                         }}
                     />
