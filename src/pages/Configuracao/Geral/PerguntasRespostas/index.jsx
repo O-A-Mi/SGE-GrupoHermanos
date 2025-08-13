@@ -192,7 +192,15 @@ const PerguntasRespostas = () => {
                         title: "Novo",
                         onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_PerguntasRespostas}/${jsonRoute.Configuracao_Geral_NovaPergunta}`),
                         icon: "fa fa-file",
-                    }],
+                    },
+                    {
+                        title: "Voltar",
+                        onClick: () => navigate("/"),
+                        icon: "fa-solid fa-reply",
+                    }
+                ]
+                    
+                    
                   }}
                   />
                 

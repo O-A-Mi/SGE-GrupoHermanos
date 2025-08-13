@@ -5,6 +5,7 @@ import { InputPadrao } from "../../../../../components/InputPadrao";
 import { useState } from "react";
 import * as Icones from "../../../../../components/Icones"
 import { useNavigate } from "react-router";
+import styles from '../PerguntasRespostas.module.css';
 
 const NovaPergunta = () => {
     const [count, setCount] = useState(0);
@@ -100,11 +101,11 @@ const NovaPergunta = () => {
 
             <div className="subtitle">Texto</div>
             <InputPadrao type="textarea" />
-
-            <button><Icones.IconFile />Gravar</button>
-            <button onClick={handleVoltar}><Icones.IconReply />Voltar</button>
-            <button><Icones.IconRight />Proximo</button>
-           
+            <div className={styles.btnGroup}>
+                <button className={styles.btnGravar}><Icones.IconFile />Gravar</button>
+                <button className={styles.btnVoltar} onClick={handleVoltar}><Icones.IconReply />Voltar</button>
+                <button className={styles.btnProximo}><Icones.IconRight />Proximo</button>
+            </div>
         </div>
         </>
     );

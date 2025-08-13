@@ -1,17 +1,42 @@
 .btnGroup {
     display: flex;
-    gap:0.7rem;
-    margin: 0.5rem;
+    gap:30%;
+    margin: 1rem;
+    
 }
 
-.btn {
+.btnGravar {
     color: #fff;
-    background-color: gray ;
+    background-color: green ;
     border: 0px;
     border-radius: 3px;
     padding: 6px 12px;
 }
 
-.btn:hover{
-    background-color: rgb(186, 185, 185);
+.btnGravar:hover{
+    background-color: rgb(38, 142, 36);
+}
+
+.btnVoltar{
+    color: #fff;
+    background-color: rgb(44, 43, 43) ;
+    border: 0px;
+    border-radius: 3px;
+    padding: 6px 12px;
+}
+
+.btnVoltar:hover{
+    background-color: black;
+}
+
+.btnProximo{
+    color: #fff;
+    background-color: rgb(1, 42, 1) ;
+    border: 0px;
+    border-radius: 3px;
+    padding: 6px 12px;
+}
+
+.btnProximo:hover{
+    background-color: black;
 }
