@@ -4,9 +4,11 @@ import MultiSelect from "../../../../../components/MultiSelect/MultiSelect";
 import { InputPadrao } from "../../../../../components/InputPadrao";
 import { useState } from "react";
 import * as Icones from "../../../../../components/Icones"
+import { useNavigate } from "react-router";
 
 const NovaPergunta = () => {
     const [count, setCount] = useState(0);
+    const navigate = useNavigate();
     const status = [
         {value: "todos", label: "TODOS"},
         {value: "ativo" , label: "ATIVO"},
@@ -58,6 +60,10 @@ const NovaPergunta = () => {
             setCount(valor);
         }
     };
+    
+    const handleVoltar = () => {
+        navigate(-1);
+    };
 
     return(
         <>
@@ -95,7 +101,9 @@ const NovaPergunta = () => {
             <div className="subtitle">Texto</div>
             <InputPadrao type="textarea" />
 
-            <button><Icones.IconFile /></button>
+            <button><Icones.IconFile />Gravar</button>
+            <button onClick={handleVoltar}><Icones.IconReply />Voltar</button>
+            <button><Icones.IconRight />Proximo</button>
            
         </div>
         </>

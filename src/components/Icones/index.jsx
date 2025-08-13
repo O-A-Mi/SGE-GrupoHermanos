@@ -60,3 +60,9 @@ export function IconHide(){
     );
 }
 
+export function IconRight(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+    )
+}
+
