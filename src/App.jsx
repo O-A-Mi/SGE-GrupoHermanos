@@ -7,6 +7,7 @@ import Departamento from './pages/Configuracao/Geral/Departamento';
 import NavBar from './components/Navigator';
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
 import NovaPergunta from './pages/Configuracao/Geral/PerguntasRespostas/NovaPergunta';
+import NovaPergunta2 from './pages/Configuracao/Geral/PerguntasRespostas/NovaPergunta/NovaPergunta2';
 import NovoDepartamento from './pages/Configuracao/Geral/Departamento/NovoDepartamento';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
             <Route path={jsonRoute.Geral}>
               <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
               <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} >
-                <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />} />
+                <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />}>
+                </Route>  
               </Route>
               <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} >
                 <Route path={jsonRoute.Configuracao_Geral_NovoDepartamento} element={<NovoDepartamento />} />
