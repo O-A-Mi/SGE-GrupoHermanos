@@ -5,7 +5,7 @@ export const jsonRoute = {
 
     // Departamento e novo departamento
     "Configuracao_Geral_Departamento": "departamento",
-    "Configuracao_Geral_Departamento_NovoDepartamento": "novo-departamento",
+    "Configuracao_Geral_NovoDepartamento": "novo-departamento",
     
     "Configuracao_Geral_Status": "status",
 
