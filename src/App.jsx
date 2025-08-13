@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './assets/icons/css/all.css';
 import Status from './pages/Configuracao/Geral/Status';
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
@@ -6,6 +6,7 @@ import Home from './pages';
 import { jsonRoute } from './utils/json';
 import Departamento from './pages/Configuracao/Geral/Departamento';
 import NavBar from './components/Navigator';
+import NovaPergunta from './pages/Configuracao/Geral/PerguntasRespostas/NovaPergunta';
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
           <Route path={jsonRoute.Configuracao}>
             <Route path={jsonRoute.Geral}>
               <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
-              <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} />
+              <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} >
+                <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />} />
+              </Route>
               <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} />
+
             </Route>
           </Route>
         </Routes>

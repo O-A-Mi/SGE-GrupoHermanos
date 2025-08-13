@@ -5,6 +5,9 @@ import TabelaPadrao from "../../../../components/TabelaPadrao";
 import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
 import * as Icones from "../../../../components/Icones";
 import styles from './PerguntasRespostas.module.css';
+import { Outlet, useNavigate } from "react-router-dom";
+import { useCallback } from "react";
+//import { Outlet } from "react-router";
 const PerguntasRespostas = () => {
 
     const status = [
@@ -33,6 +36,7 @@ const PerguntasRespostas = () => {
         { value: "ordem", name: "Ordem de Aparecimento", align: "center", sortable: true },
         { value: "status", name: "Status", align: "center", sortable: true },
     ]
+    
 
     const tableData = [
         {
@@ -42,10 +46,90 @@ const PerguntasRespostas = () => {
             pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
             ordem: "19",
             status: "ATIVO",
-        }
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
+        {
+            titulo: "",
+            declaracao: "Declaração de Saúde",
+            visualiza: "TODOS",
+            pergunta: "Doenças de pele(psoríase, dermatite, alergias, entre outras)?",
+            ordem: "19",
+            status: "ATIVO",
+        },
     ]
 
-
+    const navigate = useNavigate();
 
     return(
         <>
@@ -91,9 +175,14 @@ const PerguntasRespostas = () => {
                     showFilter: true,
                     showGuardaCampos: true,
                     paginationEnabled: true,
+                    additionalButtons: [{
+                        title: "Novo",
+                        onClick: () => navigate("./NovaPergunta"),
+                        icon: "fa fa-file",
+                        }],
                   }}
                   />
-                <PaginacaoNumerados />
+                
             </div>
         
         </>
