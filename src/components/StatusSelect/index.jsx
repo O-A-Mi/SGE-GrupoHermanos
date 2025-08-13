@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "react-select";
+import Select, {components} from "react-select";
 
 function StatusSelect({ options, placeholder, onChange }){
     return (
@@ -13,3 +13,4 @@ function StatusSelect({ options, placeholder, onChange }){
 }
 
 export default StatusSelect;
+
