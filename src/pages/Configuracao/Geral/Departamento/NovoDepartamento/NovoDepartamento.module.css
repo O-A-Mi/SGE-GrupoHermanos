@@ -21,14 +21,7 @@
     padding: 10px;
 }
 
-/* Só pra ver se algo muda, extremamente feio 👍*/
-.teste{
-    color: red;
-    border-color: rgb(218, 23, 185);
-}
-
-.pesquisaEStatus{
-    margin: 2rem 1rem;
+.containerEdicao{
     display: flex;
-    gap: 2rem;
+    flex-direction: row;
 }
