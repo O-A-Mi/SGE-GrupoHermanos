@@ -6,8 +6,11 @@ export const jsonRoute = {
     // Departamento e novo departamento
     "Configuracao_Geral_Departamento": "departamento",
     "Configuracao_Geral_NovoDepartamento": "novo-departamento",
-    
+
+    // Status, edição e nova status
     "Configuracao_Geral_Status": "status",
+    "Configuracao_Geral_EdicaoStatus": "edicao-status",
+    "Configuracao_Geral_NovoStatus": "novo-status",
 
     // Pergunta Resposta e Nova Pergunta
     "Configuracao_Geral_PerguntasRespostas": "perguntas-respostas",

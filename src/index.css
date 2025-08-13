@@ -431,3 +431,7 @@ input[type="radio"]:checked {
   margin: 2rem 1rem;
   height: 100%;
 }
+
+.content{
+  margin: 1rem 0;
+}
