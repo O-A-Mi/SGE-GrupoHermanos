@@ -89,36 +89,57 @@ const NovaPergunta = () => {
             <div>
                 <h1 className="title">Perguntas e Respostas</h1>
             </div>
-            
         </div>
 
-        <div className="conteiner">
-            
-            <div className="subtitle">Título</div>
-            <InputPadrao />
-            
-            <div className="subtitle">Status</div>
-            <StatusSelect options={status} placeholder="ESCOLHA UMA OPÇÃO" onChange={(val) => console.log("Status: ",val)}/>
-            
-            <div className="subtitle">Declaração pertencente</div>
-            <StatusSelect options={declaracao} placeholder="Selecione..." onChange={(val) => console.log("Declaracao: ",val)}/>
-            
-            <div className="subtitle">Tipo Visualização</div>
-            <StatusSelect options={vizualização} placeholder="Selecione..." onChange={(val) => console.log("Vizualização: ",val)}/>
-            
-            <div>
-                <div className="subtitle">Ordem visualização</div> 
-                <button onClick={decrementar}>-</button> 
-                <InputPadrao type="number" value={count} onChange={handleChange}></InputPadrao>
-                <button onClick={incrementar}>+</button>
-            </div>
+        <div className="container">
+             <div className="content">
+                    <div className="contentRow">
 
-            <div>
-                <div className="subtitle">Limitar Combos</div>
-                <MultiSelect options={options} placeholder="Selecione..." onChange={MultiSelect.handleChange}/>
+                        <div className={styles.contentColumn}>
+                            <label className="subtitle">Título</label>
+                                <InputPadrao />
+                        </div>
+                        <div className="contentColumn">
+                            <label className="subtitle">Status</label>
+                                <StatusSelect options={status} placeholder="ESCOLHA UMA OPÇÃO" onChange={(val) => console.log("Status: ",val)}/>
+                        </div>
+                        <div className="contentColumn">
+                            <label className="subtitle">Declaração pertencente</label>
+                                <StatusSelect options={declaracao} placeholder="Selecione..." onChange={(val) => console.log("Declaracao: ",val)}/>
+                        </div>
+                        <div className="contentColumn">
+                            <label className="subtitle">Tipo Visualização</label>
+                                <StatusSelect options={vizualização} placeholder="Selecione..." onChange={(val) => console.log("Vizualização: ",val)}/>
+                        </div>
             </div>
+        </div>
 
-            <div className="subtitle">Texto</div>
+            <div className="content">
+                <div className="contentRow">
+                    <div className={styles.contentColumn}>
+                        <label className="subtitle">Ordem visualização</label>
+
+                        {/* AQUI: aplica a classe do flex */}
+                        <div className={styles.ordemVisualizacao}>
+                        <button className={styles.btnMenosEMais} onClick={decrementar}><Icones.IconMinus /> </button>
+                        <InputPadrao
+                            type="number"
+                            value={count}
+                            onChange={handleChange}
+                            // className={styles.inputOrdem}  // opcional, para largura/centralização
+                        />
+                        <button className={styles.btnMenosEMais} onClick={incrementar}><Icones.IconPlus /></button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label className="subtitle">Limitar Combos</label>
+                        <MultiSelect options={options} placeholder="Selecione..." onChange={MultiSelect.handleChange} />
+                    </div>
+                </div>
+            </div>
+        <div className={styles.areaTexto}>
+            <label className="subtitle">Texto</label>
             <InputPadrao type="textarea" />
             <div className={styles.btnGroup}>
                 <button className={styles.btnGravar} onClick={handleSalvar}><Icones.IconFile />Gravar</button>
@@ -126,6 +147,9 @@ const NovaPergunta = () => {
                 <button className={styles.btnProximo} onClick={() => alert("Em progresso")}><Icones.IconRight />Proximo</button>
             </div>
         </div>
+
+        </div>
+
         </>
     );
 }

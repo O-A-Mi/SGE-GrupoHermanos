@@ -154,18 +154,18 @@ const PerguntasRespostas = () => {
                 </div>
             </div>
             <div className="container">
-                <div className={styles.content}>
-                    <div className={styles.contentRow}>
-                        <div className={styles.contentColumn}>
-                            <label className={styles.label}>Status</label>
+                <div className="content">
+                    <div className="contentRow">
+                        <div className="contentColumn">
+                            <label className="label">Status</label>
                             <StatusSelect options={status} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
                         </div>
-                        <div className={styles.contentColumn}>
-                            <label  className={styles.label}>Pesquisar</label>
+                        <div className="contentColumn">
+                            <label  className="label">Pesquisar</label>
                             <StatusSelect options={perguntas} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
                         </div>
-                        <div className={styles.contentColumn}>
-                            <label  className={styles.label}>Texto</label>
+                        <div className="contentColumn">
+                            <label  className="label">Texto</label>
                             <InputPadrao type="text" />
                         </div>
                     </div>

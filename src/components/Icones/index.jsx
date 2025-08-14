@@ -63,6 +63,18 @@ export function IconHide(){
 export function IconRight(){
     return(
         <FontAwesomeIcon icon={['fas', 'arrow-right']} />
-    )
+    );
+}
+
+export function IconPlus(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'plus']} />
+    );
+}
+
+export function IconMinus(){
+    return(
+        <FontAwesomeIcon icon={['fas', 'minus']} />
+    );
 }
 
