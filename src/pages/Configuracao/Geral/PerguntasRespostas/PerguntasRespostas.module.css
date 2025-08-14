@@ -29,7 +29,7 @@
     background-color: black;
 }
 
-.limitarCombo{
+.limitarCombos{
     display: flex;
     flex-direction: column;
     width: 100%;
