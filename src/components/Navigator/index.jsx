@@ -21,6 +21,10 @@ const Navigator = () => {
                         <i className="fa-solid fa-gear"></i><p>Departamento</p>
                     </Link>
                 </div>
+
+                <div>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </>
     );

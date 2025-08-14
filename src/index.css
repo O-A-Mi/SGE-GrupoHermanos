@@ -435,3 +435,12 @@ input[type="radio"]:checked {
 .content{
   margin: 1rem 0;
 }
+
+
+/**
+    Valores padrão de breakpoint do media query todos em px
+    375 - este é o valor padrão do mobile, use ele como PADRÃO, ou seja, faça as classes pensando nele
+    768 - este é o valor padrão do tablet
+    1024 - este é o valor que inicia os tamanhos de desktop
+    1280 - este é o valor padrão do desktop hoje em dia
+**/

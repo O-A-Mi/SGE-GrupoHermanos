@@ -1,17 +1,47 @@
-.contentRow{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-.contentColumn:first-child{
-    width: 25%;
-}
-
 .contentColumn{
     width: 100%;
 }
 
 .label{
     line-height: 1.75rem;
+}
+
+.contentRow{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.contentColumn:first-child{
+    width: 100%;
+}
+
+@media (width >= 768px) {
+    .contentRow{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    .contentColumn:first-child{
+        width: 50%;
+    }
+    .contentColumn{
+        width: 50%;
+    }
+}
+
+@media (width >= 1024px) {
+    .contentRow{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    .contentColumn:first-child{
+        width: 25%;
+    }
+    .contentColumn{
+        width: 100%;
+    }
 }
