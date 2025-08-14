@@ -1,71 +1,79 @@
-.labelBig{
-    font: bolder;
-    padding-bottom: 10px;
-    width: 250px;
+.labelBig {
+  font: bolder;
+  padding-bottom: 10px;
+  width: 250px;
 }
 
-.label{
-    font: bolder;
-    padding-bottom: 10px;
+.label {
+  font: bolder;
+  padding-bottom: 10px;
 }
 
-.containerEdicao{
-    display: flex;
-    flex-direction: column;
-    margin: 25px;
-    row-gap: 10px;
+.containerEdicao {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  row-gap: 10px;
 }
 
-.metade{
-    width: 50%;
+.nomeDepartamento {
+  width: 50%;
 }
 
-.quarto{
-    width: 25%;
+.statusDepartamento {
+  width: 25%;
 }
 
-.btnGroup {
-    display: flex;
-    gap:30%;
-    margin: 1rem;
-    
+.btnGrupo {
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem;
 }
 
 .btnNovo {
-    color: #fff;
-    background-color: #1c94b9 ;
-    border: 0px;
-    border-radius: 3px;
-    padding: 6px 12px;
+  color: #fff;
+  background-color: #1c94b9;
+  border: 0px;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
 }
 
-.btnNovo:hover{
-    background-color: #0053A0;
-    cursor: pointer;
+.btnNovo:hover {
+  background-color: #0053a0;
+  cursor: pointer;
 }
 
 .btnGravar {
-    color: #fff;
-    background-color: green ;
-    border: 0px;
-    border-radius: 3px;
-    padding: 6px 12px;
+  color: #fff;
+  background-color: green;
+  border: 0px;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
 }
 
-.btnGravar:hover{
-    background-color: rgb(38, 142, 36);
-    cursor: pointer;
+.btnGravar:hover {
+  background-color: rgb(38, 142, 36);
+  cursor: pointer;
 }
 
-.btnVoltar{
-    color: #fff;
-    background-color: rgb(44, 43, 43) ;
-    border: 0px;
-    border-radius: 3px;
-    padding: 6px 12px;
+.btnVoltar {
+  color: #fff;
+  background-color: rgb(44, 43, 43);
+  border: 0px;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
 }
 
-.btnVoltar:hover{
-    background-color: black;
-    cursor: pointer;
+.btnVoltar:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+@media (width <= 768px) {
+    .nomeDepartamento{
+        width: 100%;
+    }
+    .statusDepartamento{
+        width: 100%;
+    }
 }

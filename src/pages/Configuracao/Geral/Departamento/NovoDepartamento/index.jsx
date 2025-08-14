@@ -25,6 +25,11 @@ function NovoDepartamento() {
     navigate(-1);
   }
 
+  function handleNovoBotao() {
+    alert("Botão novo clicado")
+  }
+  
+
   return (
     <>
       <div className="header">
@@ -32,12 +37,13 @@ function NovoDepartamento() {
         <h2 className="subtitle">Configuração de um novo departamento</h2>
       </div>
       <div className={styles.containerEdicao}>
-        <div className={styles.metade}>
+        <div className={styles.nomeDepartamento}>
           <div className={styles.labelBig}><strong>Nome</strong></div>
           <InputPadrao type='text' />
         </div>
-        <div className={styles.quarto}>
-          <div className={styles.label}><strong>Status</strong></div>
+        <div className={styles.statusDepartamento}>
+          <div className={styles.label}><strong>Status</strong>
+          </div>
           <div>
             <InputPadrao
               type="select"
@@ -55,8 +61,8 @@ function NovoDepartamento() {
         </div>
       </div>
       <div className={styles.btnGrupo}>
-        <button className={styles.btnNovo}><Icones.IconFile />Novo</button>
-        <button className={styles.btnGravar} onClick={handleGravarBotao}> <Icones.IconExport />Gravar</button>
+        <button className={styles.btnNovo} onClick={handleNovoBotao}><Icones.IconFile />Novo</button>
+        <button className={styles.btnGravar} onClick={handleGravarBotao}> <Icones.IconPlus />Gravar</button>
         <button className={styles.btnVoltar} onClick={handleVoltarBotao}> <Icones.IconReply />Voltar</button>
       </div>
     </>

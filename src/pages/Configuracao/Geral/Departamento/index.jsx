@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 
 const status = [
+  { value: "", label: "TODOS" },
   { value: "ativo", label: "ATIVO" },
   { value: "cancelado", label: "CANCELADO" },
   { value: "suspenso", label: "SUSPENSO" },
@@ -62,7 +63,7 @@ function Departamento() {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  },[])
+  }, [])
 
   const handleNavigate = useCallback((link) => {
     navigate(link);
@@ -96,7 +97,9 @@ function Departamento() {
       </div>
       <div className={styles.pesquisaEStatus}>
         <div className={styles.status}>
-          <div className={styles.label}><strong>Status</strong></div>
+          <div className={styles.label}>
+            <strong>Status</strong>
+          </div>
           <div>
             <InputPadrao
               type="select"
@@ -104,13 +107,15 @@ function Departamento() {
               value={filterSelect}
               inputRef={filterSelectRef}
               searchable={false}
-              defaultSelect={true}
+              defaultSelect={false}
               onChange={setFilterSelect}
             />
           </div>
         </div>
         <div className={styles.pesquisa}>
-          <div className={styles.label}><strong>Nome</strong></div>
+          <div className={styles.label}>
+            <strong>Nome</strong>
+          </div>
           <InputPadrao
             type='search'
             value={filterText}
@@ -135,7 +140,7 @@ function Departamento() {
             showExport: true,
             fileName: "departamentos",
             showColumnsSelector: true,
-            showSearch: true,
+            showSearch: false,
             toolbar: true,
             rowOnClick: () => { handleRowClick("Linha clicada") }
           }}
