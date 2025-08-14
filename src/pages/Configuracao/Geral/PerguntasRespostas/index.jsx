@@ -157,7 +157,7 @@ const PerguntasRespostas = () => {
                 <div className={styles.content}>
                     <div className={styles.contentRow}>
                         <div className={styles.contentColumn}>
-                            <label  className={styles.label}>Status</label>
+                            <label className={styles.label}>Status</label>
                             <StatusSelect options={status} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
                         </div>
                         <div className={styles.contentColumn}>

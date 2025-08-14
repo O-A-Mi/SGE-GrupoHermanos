@@ -71,3 +71,8 @@
 .label{
     line-height: 1.75rem;
 }
+
+.labelStatus{
+    line-height: 1.75rem;
+    width: 7rem;
+}
