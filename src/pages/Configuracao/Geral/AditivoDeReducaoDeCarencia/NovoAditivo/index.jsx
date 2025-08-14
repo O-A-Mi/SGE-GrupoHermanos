@@ -1,5 +1,7 @@
 import { InputPadrao } from "../../../../../components/InputPadrao";
 import StatusSelect from "../../../../../components/StatusSelect";
+import TogglePadrao from "../../../../../components/TooglePadrao";
+import { useState } from "react";
 
 const NovoAditivo = () => {
     const aparece = [
@@ -7,6 +9,9 @@ const NovoAditivo = () => {
         {value: "adesao", label: "Adesão"},
         {value: "empresarial", label: "Empresarial"},
     ]
+
+    const [portal, setPortal] = useState(false);
+
     return(
         <>
             <div className="header">
@@ -26,8 +31,8 @@ const NovoAditivo = () => {
                         </div>
 
                         <div className="contentColumn">
-                            <label  className="label">Texto</label>
-                            <InputPadrao />
+                            <label  className="label">V. no Portal do Corretor?</label>
+                            <TogglePadrao checked={portal} onChange={setPortal}/>
                         </div>
 
                         <div className="contentColumn">
