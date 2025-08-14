@@ -40,3 +40,34 @@
 .btnProximo:hover{
     background-color: black;
 }
+
+.contentColumn{
+    width: 100%;
+}
+
+@media (width >= 376px) {
+    .contentRow{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    .contentColumn:first-child{
+        width: 25%;
+    }
+}
+@media (width <= 375px) {
+    .contentRow{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .contentColumn:first-child{
+        width: 100%;
+    }
+}
+
+.label{
+    line-height: 1.75rem;
+}

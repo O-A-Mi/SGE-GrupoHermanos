@@ -146,66 +146,69 @@ const PerguntasRespostas = () => {
     return(
         <>
             <div className="header">
-                <div className="title">Abre Perguntas e Respostas</div>
-                   
-            </div>
-            
-            <div className="conteiner">
-                <div className="subtitle">Status</div>
                 <div>
-                    <StatusSelect options={status} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
+                    <h1 className="title">Abre Perguntas e Respostas</h1>
                 </div>
-                <div className="subtitle">Pesquisar</div>
                 <div>
-                    <StatusSelect options={perguntas} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
-                <div className="subtitle">Texto</div>
+                    <h1 className="subtitle">Abre Perguntas e Respostas</h1>
                 </div>
-                    <InputPadrao type="text" />
-                </div>
-
-   
-            <div>
-                <TabelaPadrao
-                tabelaId="status"
-                columns={tableCollumns}
-                data={tableData}
-                options={{
-                    cardsPerPage: 10,
-                    showPagination: true,
-                    showExport: true,
-                    fileName: "departamentos",
-                    showPagination: true,
-                    showHeader: true,
-                    showFooter: true,
-                    toolbar: true,
-                    toolbarPosition: "right",
-                    showPaginationSwitch: true,
-                    showSearch: true,
-                    showRefresh: true,
-                    showToggleView: true,
-                    showColumnsSelector: true,
-                    showExport: true,
-                    showFilter: true,
-                    showGuardaCampos: true,
-                    paginationEnabled: true,
-                    additionalButtons: [{
-                        title: "Novo",
-                        onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_PerguntasRespostas}/${jsonRoute.Configuracao_Geral_NovaPergunta}`),
-                        icon: "fa fa-file",
-                    },
-                    {
-                        title: "Voltar",
-                        onClick: () => navigate("/"),
-                        icon: "fa-solid fa-reply",
-                    }
-                ]
-                    
-                    
-                  }}
-                  />
-                
             </div>
-        
+            <div className="container">
+                <div className={styles.content}>
+                    <div className={styles.contentRow}>
+                        <div className={styles.contentColumn}>
+                            <label  className={styles.label}>Status</label>
+                            <StatusSelect options={status} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
+                        </div>
+                        <div className={styles.contentColumn}>
+                            <label  className={styles.label}>Pesquisar</label>
+                            <StatusSelect options={perguntas} placeholder="Selecione..." onChange={(val) => console.log("Status: ",val)}/>
+                        </div>
+                        <div className={styles.contentColumn}>
+                            <label  className={styles.label}>Texto</label>
+                            <InputPadrao type="text" />
+                        </div>
+                    </div>
+                    <div>
+                        <TabelaPadrao
+                        tabelaId="status"
+                        columns={tableCollumns}
+                        data={tableData}
+                        options={{
+                            cardsPerPage: 10,
+                            showPagination: true,
+                            showExport: true,
+                            fileName: "departamentos",
+                            showPagination: true,
+                            showHeader: true,
+                            showFooter: true,
+                            toolbar: true,
+                            toolbarPosition: "right",
+                            showPaginationSwitch: true,
+                            showSearch: true,
+                            showRefresh: true,
+                            showToggleView: true,
+                            showColumnsSelector: true,
+                            showExport: true,
+                            showFilter: true,
+                            showGuardaCampos: true,
+                            paginationEnabled: true,
+                            additionalButtons: [{
+                                title: "Novo",
+                                onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_PerguntasRespostas}/${jsonRoute.Configuracao_Geral_NovaPergunta}`),
+                                icon: "fa fa-file",
+                            },
+                            {
+                                title: "Voltar",
+                                onClick: () => navigate("/"),
+                                icon: "fa-solid fa-reply",
+                            }
+                        ]
+                        }}
+                        />
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
