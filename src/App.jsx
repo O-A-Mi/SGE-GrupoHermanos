@@ -25,6 +25,9 @@ import NovaPergunta from './pages/Configuracao/Geral/PerguntasRespostas/NovaPerg
 import AditivoDeReducaoDeCarencia from './pages/Configuracao/Geral/AditivoDeReducaoDeCarencia';
 import NovoAditivo from './pages/Configuracao/Geral/AditivoDeReducaoDeCarencia/NovoAditivo';
 
+//Tipo de Documento/Arquivo
+import TipoDeDocumentoArquivo from './pages/Configuracao/Geral/TipoDeDocumentoArquivo';
+import NovoDocumentoArquivo from './pages/Configuracao/Geral/TipoDeDocumentoArquivo/NovoDocumentoArquivo';
 
 function App() {
   return (
@@ -42,7 +45,7 @@ function App() {
 
               <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} >
                 <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />}>
-                </Route>  
+                </Route>
               </Route>
 
               <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} >
@@ -52,6 +55,11 @@ function App() {
               <Route path={jsonRoute.Configuracao_Geral_AditivoDeReducaoDeCarencia} element={<AditivoDeReducaoDeCarencia />}>
                 <Route path={jsonRoute.Configuracao_Geral_NovoAditivo} element={<NovoAditivo />} />
               </Route>
+
+              <Route path={jsonRoute.Configuracao_Geral_TipoDeDocumentoArquivo} element={<TipoDeDocumentoArquivo />}>
+                <Route path={jsonRoute.Configuracao_Geral_NovoDocumentoArquivo} element={<NovoDocumentoArquivo />} />
+              </Route>
+              
             </Route>
           </Route>
         </Routes>

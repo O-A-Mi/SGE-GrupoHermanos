@@ -19,5 +19,9 @@ export const jsonRoute = {
 
     //Reducao de Carencia
     "Configuracao_Geral_AditivoDeReducaoDeCarencia" : "aditivo-de-reducao-de-carencia",
-    "Configuracao_Geral_AditivoDeReducaoDeCarencia_NovoAditivo" : "novo-aditivo"
+    "Configuracao_Geral_AditivoDeReducaoDeCarencia_NovoAditivo" : "novo-aditivo",
+
+    // Tipo de documento/arquivo
+    "Configuracao_Geral_TipoDeDocumentoArquivo": "tipo-de-documento-arquivo",
+    "Configuracao_Geral_NovoDocumentoArquivo" : "novo-documento-arquivo",
 }
