@@ -126,28 +126,26 @@ const NovaPergunta = () => {
                             type="number"
                             value={count}
                             onChange={handleChange}
-                            // className={styles.inputOrdem}  // opcional, para largura/centralização
                         />
                         <button className={styles.btnMenosEMais} onClick={incrementar}><Icones.IconPlus /></button>
                         </div>
                     </div>
 
-                    <div>
+                    <div className={styles.limitarCombos}>
                         <label className="subtitle">Limitar Combos</label>
                         <MultiSelect options={options} placeholder="Selecione..." onChange={MultiSelect.handleChange} />
                     </div>
                 </div>
             </div>
-        <div className={styles.areaTexto}>
-            <label className="subtitle">Texto</label>
-            <InputPadrao type="textarea" />
-            <div className={styles.btnGroup}>
-                <button className={styles.btnGravar} onClick={handleSalvar}><Icones.IconFile />Gravar</button>
-                <button className={styles.btnVoltar} onClick={handleVoltar}><Icones.IconReply />Voltar</button>
-                <button className={styles.btnProximo} onClick={() => alert("Em progresso")}><Icones.IconRight />Proximo</button>
+            <div className={styles.areaTexto}>
+                <label className="subtitle">Texto</label>
+                    <InputPadrao type="textarea" />
+                <div className={styles.btnGroup}>
+                    <button className={styles.btnGravar} onClick={handleSalvar}><Icones.IconFile />Gravar</button>
+                    <button className={styles.btnVoltar} onClick={handleVoltar}><Icones.IconReply />Voltar</button>
+                    <button className={styles.btnProximo} onClick={() => alert("Em progresso")}><Icones.IconRight />Proximo</button>
+                </div>
             </div>
-        </div>
-
         </div>
 
         </>
