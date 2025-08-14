@@ -3,7 +3,7 @@ import TabelaPadrao from '../../../../components/TabelaPadrao'
 import { InputPadrao, UseInputMask } from '../../../../components/InputPadrao'
 import { Outlet, useLocation, useNavigate } from 'react-router'
 import { jsonRoute } from '../../../../utils/json'
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 /* Listas de placeholder */
 
@@ -48,10 +48,22 @@ function Departamento() {
 
   /* Hooks */
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth > 768)
   const [filterSelect, setFilterSelect, filterSelectRef] = UseInputMask()
   const [filterText, setFilterText, filterTextRef] = UseInputMask()
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth > 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  })
+
   const handleNavigate = useCallback((link) => {
     navigate(link);
   }, [navigate]);
