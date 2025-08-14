@@ -62,7 +62,7 @@ function Departamento() {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  })
+  },[])
 
   const handleNavigate = useCallback((link) => {
     navigate(link);
@@ -95,7 +95,7 @@ function Departamento() {
         <h2 className="subtitle">Adicione, edite ou remova departamentos</h2>
       </div>
       <div className={styles.pesquisaEStatus}>
-        <div>
+        <div className={styles.status}>
           <div className={styles.label}><strong>Status</strong></div>
           <div>
             <InputPadrao
@@ -109,7 +109,7 @@ function Departamento() {
             />
           </div>
         </div>
-        <div>
+        <div className={styles.pesquisa}>
           <div className={styles.label}><strong>Nome</strong></div>
           <InputPadrao
             type='search'
