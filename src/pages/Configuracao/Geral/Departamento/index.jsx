@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 
 const status = [
+  { value: "", label: "TODOS" },
   { value: "ativo", label: "ATIVO" },
   { value: "cancelado", label: "CANCELADO" },
   { value: "suspenso", label: "SUSPENSO" },
@@ -104,7 +105,7 @@ function Departamento() {
               value={filterSelect}
               inputRef={filterSelectRef}
               searchable={false}
-              defaultSelect={true}
+              defaultSelect={false}
               onChange={setFilterSelect}
             />
           </div>
@@ -135,7 +136,7 @@ function Departamento() {
             showExport: true,
             fileName: "departamentos",
             showColumnsSelector: true,
-            showSearch: true,
+            showSearch: false,
             toolbar: true,
             rowOnClick: () => { handleRowClick("Linha clicada") }
           }}

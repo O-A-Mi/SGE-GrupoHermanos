@@ -25,6 +25,10 @@ function NovoDepartamento() {
     navigate(-1);
   }
 
+  function handleNovoBotao() {
+    alert("Botão novo clicado")
+  }
+
   return (
     <>
       <div className="header">
@@ -37,7 +41,8 @@ function NovoDepartamento() {
           <InputPadrao type='text' />
         </div>
         <div className={styles.quarto}>
-          <div className={styles.label}><strong>Status</strong></div>
+          <div className={styles.label}><strong>Status</strong>
+          </div>
           <div>
             <InputPadrao
               type="select"
@@ -55,8 +60,8 @@ function NovoDepartamento() {
         </div>
       </div>
       <div className={styles.btnGrupo}>
-        <button className={styles.btnNovo}><Icones.IconFile />Novo</button>
-        <button className={styles.btnGravar} onClick={handleGravarBotao}> <Icones.IconExport />Gravar</button>
+        <button className={styles.btnNovo} onClick={handleNovoBotao}><Icones.IconFile />Novo</button>
+        <button className={styles.btnGravar} onClick={handleGravarBotao}> <Icones.IconPlus />Gravar</button>
         <button className={styles.btnVoltar} onClick={handleVoltarBotao}> <Icones.IconReply />Voltar</button>
       </div>
     </>
