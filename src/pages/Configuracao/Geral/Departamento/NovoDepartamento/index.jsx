@@ -1,6 +1,9 @@
 import styles from "./NovoDepartamento.module.css"
 import StatusSelect from '../../../../../components/StatusSelect'
-import { InputPadrao } from '../../../../../components/InputPadrao'
+import { InputPadrao, UseInputMask } from '../../../../../components/InputPadrao'
+import * as Icones from '../../../../../components/Icones'
+import { useNavigate } from "react-router"
+
 
 const status = [
   { value: "ativo", label: "ATIVO" },
@@ -11,24 +14,51 @@ const status = [
 
 function NovoDepartamento() {
 
+  const navigate = useNavigate();
+  const [selectStatus, setSelectStatus, selectStatusRef] = UseInputMask()
+
+  function handleGravarBotao() {
+    alert("Departamento adicionado")
+  }
+
+  function handleVoltarBotao() {
+    navigate(-1);
+  }
+
   return (
     <>
       <div className="header">
         <h1 className="title">Novo departamento</h1>
         <h2 className="subtitle">Configuração de um novo departamento</h2>
       </div>
-        <div className={styles.containerEdicao}>
-          <div className={styles.metade}>
-            <div className={styles.labelBig}><strong>Nome</strong></div>
-            <InputPadrao type='text'/>
-          </div>
-          <div className={styles.quarto}>
+      <div className={styles.containerEdicao}>
+        <div className={styles.metade}>
+          <div className={styles.labelBig}><strong>Nome</strong></div>
+          <InputPadrao type='text' />
+        </div>
+        <div className={styles.quarto}>
           <div className={styles.label}><strong>Status</strong></div>
-            <div>
-              <StatusSelect options={status} placeholder="Selecionar..." onChange={(e) => { e ? console.log(e.value) : null }} />
-            </div>
+          <div>
+            <InputPadrao
+              type="select"
+              options={status}
+              value={selectStatus}
+              inputRef={selectStatusRef}
+              onChange={setSelectStatus}
+              searchable={false}
+              defaultSelect={false}
+              required={true}
+              placeholder="Selecionar..."
+
+            />
           </div>
         </div>
+      </div>
+      <div className={styles.btnGrupo}>
+        <button className={styles.btnNovo}><Icones.IconFile />Novo</button>
+        <button className={styles.btnGravar} onClick={handleGravarBotao}> <Icones.IconExport />Gravar</button>
+        <button className={styles.btnVoltar} onClick={handleVoltarBotao}> <Icones.IconReply />Voltar</button>
+      </div>
     </>
   )
 }

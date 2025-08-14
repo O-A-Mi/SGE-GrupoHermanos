@@ -32,3 +32,21 @@
     display: flex;
     gap: 2rem;
 }
+
+.pesquisa{
+    width: 100%;
+}
+
+.status{
+    width: 25%;
+}
+
+@media (width <= 768px) {
+    .pesquisaEStatus{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .status{
+        width: 100%;
+    }
+}
