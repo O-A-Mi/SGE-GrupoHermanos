@@ -50,7 +50,7 @@ function App() {
               </Route>
 
               <Route path={jsonRoute.Configuracao_Geral_AditivoDeReducaoDeCarencia} element={<AditivoDeReducaoDeCarencia />}>
-                <Route path={jsonRoute.Configuracao_Geral_NovoAditivo} element={<NovoAditivo />} />
+                <Route path={jsonRoute.Configuracao_Geral_AditivoDeReducaoDeCarencia_NovoAditivo} element={<NovoAditivo />} />
               </Route>
             </Route>
           </Route>
