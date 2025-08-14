@@ -21,6 +21,11 @@ import EdicaoStatus from './pages/Configuracao/Geral/Status/EdicaoStatus';
 import PerguntasRespostas from './pages/Configuracao/Geral/PerguntasRespostas';
 import NovaPergunta from './pages/Configuracao/Geral/PerguntasRespostas/NovaPergunta';
 
+//Reducao de Carencia 
+import AditivoDeReducaoDeCarencia from './pages/Configuracao/Geral/AditivoDeReducaoDeCarencia';
+import NovoAditivo from './pages/Configuracao/Geral/AditivoDeReducaoDeCarencia/NovoAditivo';
+
+
 function App() {
   return (
     <>
@@ -42,6 +47,10 @@ function App() {
 
               <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} >
                 <Route path={jsonRoute.Configuracao_Geral_NovoDepartamento} element={<NovoDepartamento />} />
+              </Route>
+
+              <Route path={jsonRoute.Configuracao_Geral_AditivoDeReducaoDeCarencia} element={<AditivoDeReducaoDeCarencia />}>
+                <Route path={jsonRoute.Configuracao_Geral_NovoAditivo} element={<NovoAditivo />} />
               </Route>
             </Route>
           </Route>

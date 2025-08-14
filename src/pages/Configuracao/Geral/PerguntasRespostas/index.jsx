@@ -2,12 +2,8 @@ import React from "react";
 import StatusSelect from "../../../../components/StatusSelect/";
 import { InputPadrao } from "../../../../components/InputPadrao";
 import TabelaPadrao from "../../../../components/TabelaPadrao";
-import PaginacaoNumerados from "../../../../components/PaginacaoNumerados";
-import * as Icones from "../../../../components/Icones";
-import styles from './PerguntasRespostas.module.css';
 import { useCallback } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router";
-
 import { jsonRoute } from "../../../../utils/json";
 
 const PerguntasRespostas = () => {
@@ -37,7 +33,7 @@ const PerguntasRespostas = () => {
         { value: "pergunta", name: "Pergunta", align: "center", sortable: true },
         { value: "ordem", name: "Ordem de Aparecimento", align: "center", sortable: true },
         { value: "status", name: "Status", align: "center", sortable: true },
-    ]
+    ];
     
 
     const tableData = [
@@ -148,9 +144,6 @@ const PerguntasRespostas = () => {
             <div className="header">
                 <div>
                     <h1 className="title">Abre Perguntas e Respostas</h1>
-                </div>
-                <div>
-                    <h1 className="subtitle">Abre Perguntas e Respostas</h1>
                 </div>
             </div>
             <div className="container">

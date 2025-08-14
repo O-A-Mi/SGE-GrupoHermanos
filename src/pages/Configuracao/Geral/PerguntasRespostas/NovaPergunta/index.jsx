@@ -141,8 +141,8 @@ const NovaPergunta = () => {
                 <label className="subtitle">Texto</label>
                     <InputPadrao type="textarea" />
                 <div className={styles.btnGroup}>
-                    <button className={styles.btnGravar} onClick={handleSalvar}><Icones.IconFile />Gravar</button>
                     <button className={styles.btnVoltar} onClick={handleVoltar}><Icones.IconReply />Voltar</button>
+                    <button className={styles.btnGravar} onClick={handleSalvar}><Icones.IconFile />Gravar</button>
                     <button className={styles.btnProximo} onClick={() => alert("Em progresso")}><Icones.IconRight />Proximo</button>
                 </div>
             </div>

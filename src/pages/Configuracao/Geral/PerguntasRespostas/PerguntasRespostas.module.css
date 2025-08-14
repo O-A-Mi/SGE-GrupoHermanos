@@ -1,20 +1,22 @@
 .btnGroup {
     display: flex;
-    gap:30%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin: 1rem;
     
 }
 
 .btnGravar {
     color: #fff;
-    background-color: green ;
+    background-color: #0736C4;
     border: 0px;
     border-radius: 3px;
     padding: 6px 12px;
 }
 
 .btnGravar:hover{
-    background-color: rgb(38, 142, 36);
+    background-color:#000074;
 }
 
 .btnVoltar{
@@ -37,14 +39,14 @@
 
 .btnProximo{
     color: #fff;
-    background-color: rgb(1, 42, 1) ;
+    background-color: #0736C4 ;
     border: 0px;
     border-radius: 3px;
     padding: 6px 12px;
 }
 
 .btnProximo:hover{
-    background-color: black;
+    background-color: #000074;
 }
 .btnMenosEMais{
     padding: 0.7rem 1.2rem;
