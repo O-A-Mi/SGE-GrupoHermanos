@@ -9,8 +9,8 @@ export const jsonRoute = {
 
     // Status, edição e nova status
     "Configuracao_Geral_Status": "status",
-    "Configuracao_Geral_EdicaoStatus": "edicao-status",
-    "Configuracao_Geral_NovoStatus": "novo-status",
+    "Configuracao_Geral_EdicaoStatus": "status/edicao-status",
+    "Configuracao_Geral_NovoStatus": "status/novo-status",
 
     // Pergunta Resposta e Nova Pergunta
     "Configuracao_Geral_PerguntasRespostas": "perguntas-respostas",

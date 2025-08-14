@@ -104,13 +104,6 @@ const Status = () => {
         navigate(link);
     }, [navigate]);
 
-    const isEdicaoPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovoStatus);
-    const isNovaPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovaPergunta);
-
-    if (isNovaPerguntaRoute || isEdicaoPerguntaRoute){
-        return <Outlet />;
-    }
-
     return (
         <>
             <div className="header">
@@ -163,14 +156,14 @@ const Status = () => {
                             showExport: true,
                             paginationEnabled: true,
                             tableView: "table",
-                            rowOnClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_Status}/${jsonRoute.Configuracao_Geral_EdicaoStatus}`),
+                            rowOnClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_EdicaoStatus}`),
                             additionalButtons: [{
                                 title: "Imprimir",
                                 onClick: () => false,
                                 icon: "fa-solid fa-print"
                             },{
                                 title: "Adicionar Nova Informação",
-                                onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_Status}/${jsonRoute.Configuracao_Geral_NovoStatus}`),
+                                onClick: () => handleNavigate(`../${jsonRoute.Configuracao_Geral_NovoStatus}`),
                                 icon: "fa fa-plus"
                             },
                             {
@@ -182,6 +175,7 @@ const Status = () => {
                     />
                 </div>
             </div>
+            <Outlet />
         </>
     )
 }

@@ -30,14 +30,16 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path={jsonRoute.Configuracao}>
             <Route path={jsonRoute.Geral}>
-              <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} >
-                <Route path={jsonRoute.Configuracao_Geral_EdicaoStatus} element={<NovoStatus />} />
-                <Route path={jsonRoute.Configuracao_Geral_NovoStatus} element={<EdicaoStatus />} />
-              </Route>
+
+              <Route path={jsonRoute.Configuracao_Geral_Status} element={<Status />} />
+              <Route path={jsonRoute.Configuracao_Geral_EdicaoStatus} element={<EdicaoStatus />} />
+              <Route path={jsonRoute.Configuracao_Geral_NovoStatus} element={<NovoStatus />} />
+
               <Route path={jsonRoute.Configuracao_Geral_PerguntasRespostas} element={<PerguntasRespostas />} >
                 <Route path={jsonRoute.Configuracao_Geral_NovaPergunta} element={<NovaPergunta />}>
                 </Route>  
               </Route>
+
               <Route path={jsonRoute.Configuracao_Geral_Departamento} element={<Departamento />} >
                 <Route path={jsonRoute.Configuracao_Geral_NovoDepartamento} element={<NovoDepartamento />} />
               </Route>
