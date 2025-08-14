@@ -7,16 +7,7 @@ import { jsonRoute } from "../../../../utils/json";
 
 const AditivoDeReducaoDeCarencia = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-    const handleNavigate = useCallback((link) => {
-        navigate(link);
-    }, [navigate]);
-
-    const isNovaPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_AditivoDeReducaoDeCarencia_NovoAditivo);
-
-    if (isNovaPerguntaRoute) {
-        return <Outlet />;
-    }
+    const location = useLocation()
 
     const status = [
         {value: "todos", label: "TODOS"},
@@ -127,11 +118,20 @@ const AditivoDeReducaoDeCarencia = () => {
         },
     ]
 
-    
+    const handleNavigate = useCallback((link) => {
+        navigate(link);
+    }, [navigate]);
+
+    const isNovaPerguntaRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_AditivoDeReducaoDeCarencia_NovoAditivo);
+
+    if (isNovaPerguntaRoute) {
+        return <Outlet />;
+    }
 
 
     return (
         <>
+         
             <div className="header">
                 <div>
                     <h1 className="title">Abre Perguntas e Respostas</h1>
@@ -190,12 +190,13 @@ const AditivoDeReducaoDeCarencia = () => {
                             }
                         ]
                         }}
+                        
                         />
                     </div>
                 </div>
             </div>
-        </>
-    );
-}
+            </>
+        )}
+        
 
 export default AditivoDeReducaoDeCarencia;
