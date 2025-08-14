@@ -29,6 +29,12 @@
     background-color: black;
 }
 
+.limitarCombo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .btnProximo{
     color: #fff;
     background-color: rgb(1, 42, 1) ;
