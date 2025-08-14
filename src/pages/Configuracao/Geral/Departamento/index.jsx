@@ -107,7 +107,7 @@ function Departamento() {
           />
         </div>
       </div>
-      <div>
+      <div className='container'>
         <TabelaPadrao
           tabelaId="departamentos-config"
           columns={tabelaColumns}
