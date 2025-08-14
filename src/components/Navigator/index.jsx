@@ -23,7 +23,7 @@ const Navigator = () => {
                 </div>
 
                 <div>
-                    <i class="fa-solid fa-bars"></i>
+                    <i className="fa-solid fa-bars"></i>
                 </div>
             </div>
         </>
