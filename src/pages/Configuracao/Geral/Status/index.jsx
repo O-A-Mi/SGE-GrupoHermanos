@@ -115,7 +115,7 @@ const Status = () => {
                 </div>
             </div>
             <div className="container">
-                <div className={styles.content}>
+                <div className="content">
                     <div className={styles.contentRow}>
                         <div className={styles.contentColumn}>
                             <label className={styles.label}>Pesquisar</label>
@@ -138,7 +138,7 @@ const Status = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.content}>
+                <div className="content">
                     <TabelaPadrao 
                         tabelaId="status"
                         columns={tableCollumns}
@@ -168,7 +168,7 @@ const Status = () => {
                             },
                             {
                                 title: "Voltar",
-                                onClick: () => navigate(-1),
+                                onClick: () => handleNavigate('/'),
                                 icon: "fa fa-arrow-left"
                             }]
                         }}
