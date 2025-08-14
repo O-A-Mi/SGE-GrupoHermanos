@@ -3,10 +3,50 @@ import TabelaPadrao from '../../../../components/TabelaPadrao'
 import { InputPadrao, UseInputMask } from '../../../../components/InputPadrao'
 import { Outlet, useLocation, useNavigate } from 'react-router'
 import { jsonRoute } from '../../../../utils/json'
-import { useCallback} from 'react'
+import { useCallback } from 'react'
+
+/* Listas de placeholder */
+
+
+const status = [
+  { value: "ativo", label: "ATIVO" },
+  { value: "cancelado", label: "CANCELADO" },
+  { value: "suspenso", label: "SUSPENSO" },
+  { value: "inativo", label: "INATIVO" },
+]
+
+
+const tabelaColumns = [
+  {
+    value: 'status',
+    name: 'Status do departamento',
+    align: 'center',
+    sortable: true
+  },
+  {
+    value: 'nome',
+    name: 'Nome do Departamento',
+    align: 'center',
+    sortable: true,
+  },
+]
+
+const tabelaDados = [
+  { status: 'Ativo', nome: 'Suporte' },
+  { status: 'Ativo', nome: 'Jurídico' },
+  { status: 'Suspenso', nome: 'Jurídico' },
+  { status: 'Ativo', nome: 'Diretoria' },
+  { status: 'Ativo', nome: 'Financeiro' },
+  { status: 'Inativo', nome: 'Comercial' },
+  { status: 'Suspenso', nome: 'Financeiro' },
+  { status: 'Ativo', nome: 'Corinthians' },
+  { status: 'Cancelado', nome: 'Financeiro' }
+]
 
 
 function Departamento() {
+
+  /* Hooks */
 
   const [filterSelect, setFilterSelect, filterSelectRef] = UseInputMask()
   const [filterText, setFilterText, filterTextRef] = UseInputMask()
@@ -16,54 +56,21 @@ function Departamento() {
     navigate(link);
   }, [navigate]);
 
+
+  /* Constantes */
+
   const isNovoDepartamentoRoute = location.pathname.includes(jsonRoute.Configuracao_Geral_NovoDepartamento);
   if (isNovoDepartamentoRoute) {
     return <Outlet />;
   }
 
-  const status = [
-    { value: "ativo", label: "ATIVO" },
-    { value: "cancelado", label: "CANCELADO" },
-    { value: "suspenso", label: "SUSPENSO" },
-    { value: "inativo", label: "INATIVO" },
-  ]
+  const filteredData = tabelaDados.filter(item => {
+    const matchesStatus = filterSelect ? item.status.toLowerCase() === filterSelect.toLowerCase() : true;
+    const matchesName = filterText ? item.nome.toLowerCase().includes(filterText.toLowerCase()) : true;
+    return matchesStatus && matchesName;
+  });
 
-
-  const tabelaColumns = [
-    {
-      value: 'status',
-      name: 'Status do departamento',
-      align: 'center',
-      sortable: true
-    },
-    {
-      value: 'nome',
-      name: 'Nome do Departamento',
-      align: 'center',
-      sortable: true,
-    },
-  ]
-
-  const tabelaDados = [
-    { status: 'Ativo', nome: 'Suporte' },
-    { status: 'Ativo', nome: 'Jurídico' },
-    { status: 'Suspenso', nome: 'Jurídico' },
-    { status: 'Ativo', nome: 'Diretoria' },
-    { status: 'Ativo', nome: 'Financeiro' },
-    { status: 'Inativo', nome: 'Comercial' },
-    { status: 'Cancelado', nome: 'Financeiro' },
-    { status: 'Cancelado', nome: 'Financeiro' },
-    { status: 'Cancelado', nome: 'Financeiro' }
-  ]
-
-
-  function onChangeFilterSelect(e) {
-    setFilterSelect(e.target.value)
-  }
-
-  function onChangeFilterText(e) {
-    setFilterText(e.target.value)
-  }
+  /* Funções */
 
   function handleRowClick(texto) {
     alert(texto)
@@ -79,14 +86,14 @@ function Departamento() {
         <div>
           <div className={styles.label}><strong>Status</strong></div>
           <div>
-            <InputPadrao 
-            type="select"
-            options={status}
-            value={filterSelect}
-            inputRef={filterSelectRef}
-            searchable={false}
-            defaultSelect={false}
-            onChange={onChangeFilterSelect}
+            <InputPadrao
+              type="select"
+              options={status}
+              value={filterSelect}
+              inputRef={filterSelectRef}
+              searchable={false}
+              defaultSelect={true}
+              onChange={setFilterSelect}
             />
           </div>
         </div>
@@ -96,7 +103,7 @@ function Departamento() {
             type='search'
             value={filterText}
             inputRef={filterTextRef}
-            onChange={onChangeFilterText}
+            onChange={setFilterText}
           />
         </div>
       </div>
@@ -104,7 +111,7 @@ function Departamento() {
         <TabelaPadrao
           tabelaId="departamentos-config"
           columns={tabelaColumns}
-          data={tabelaDados}
+          data={filteredData}
           options={{
             additionalButtons: [{
               title: "Novo departamento",
@@ -118,7 +125,7 @@ function Departamento() {
             showColumnsSelector: true,
             showSearch: true,
             toolbar: true,
-            rowOnClick: () => { handleRowClick("a") }
+            rowOnClick: () => { handleRowClick("Linha clicada") }
           }}
         />
       </div>
