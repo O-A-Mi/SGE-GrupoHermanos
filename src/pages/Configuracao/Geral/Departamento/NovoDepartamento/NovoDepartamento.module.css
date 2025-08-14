@@ -1,71 +1,79 @@
-.labelBig{
-    font: bolder;
-    padding-bottom: 10px;
-    width: 250px;
+.labelBig {
+  font: bolder;
+  padding-bottom: 10px;
+  width: 250px;
 }
 
-.label{
-    font: bolder;
-    padding-bottom: 10px;
+.label {
+  font: bolder;
+  padding-bottom: 10px;
 }
 
-.containerEdicao{
-    display: flex;
-    flex-direction: column;
-    margin: 25px;
-    row-gap: 10px;
+.containerEdicao {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  row-gap: 10px;
 }
 
-.metade{
-    width: 50%;
+.metade {
+  width: 50%;
 }
 
-.quarto{
-    width: 25%;
+.quarto {
+  width: 25%;
 }
 
 .btnGrupo {
-    display: flex;
-    gap:30%;
-    margin: 1rem;
-    
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem;
 }
 
 .btnNovo {
-    color: #fff;
-    background-color: #1c94b9 ;
-    border: 0px;
-    border-radius: 3px;
-    padding: 6px 12px;
+  color: #fff;
+  background-color: #1c94b9;
+  border: 0px;
+  border-radius: 3px;
+  padding: 6px 12px;
 }
 
-.btnNovo:hover{
-    background-color: #0053A0;
-    cursor: pointer;
+.btnNovo:hover {
+  background-color: #0053a0;
+  cursor: pointer;
 }
 
 .btnGravar {
-    color: #fff;
-    background-color: green ;
-    border: 0px;
-    border-radius: 3px;
-    padding: 6px 12px;
+  color: #fff;
+  background-color: green;
+  border: 0px;
+  border-radius: 3px;
+  padding: 6px 12px;
 }
 
-.btnGravar:hover{
-    background-color: rgb(38, 142, 36);
-    cursor: pointer;
+.btnGravar:hover {
+  background-color: rgb(38, 142, 36);
+  cursor: pointer;
 }
 
-.btnVoltar{
-    color: #fff;
-    background-color: rgb(44, 43, 43) ;
-    border: 0px;
-    border-radius: 3px;
-    padding: 6px 12px;
+.btnVoltar {
+  color: #fff;
+  background-color: rgb(44, 43, 43);
+  border: 0px;
+  border-radius: 3px;
+  padding: 6px 12px;
 }
 
-.btnVoltar:hover{
-    background-color: black;
-    cursor: pointer;
+.btnVoltar:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+@media (width <= 768px) {
+    .metade{
+        width: 100%;
+    }
+    .quarto{
+        width: 100%;
+    }
 }
