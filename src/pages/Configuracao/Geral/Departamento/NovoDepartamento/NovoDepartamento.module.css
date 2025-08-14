@@ -16,11 +16,11 @@
   row-gap: 10px;
 }
 
-.metade {
+.nomeDepartamento {
   width: 50%;
 }
 
-.quarto {
+.statusDepartamento {
   width: 25%;
 }
 
@@ -35,7 +35,7 @@
   background-color: #1c94b9;
   border: 0px;
   border-radius: 3px;
-  padding: 6px 12px;
+  padding: 0.5rem 1rem;
 }
 
 .btnNovo:hover {
@@ -48,7 +48,7 @@
   background-color: green;
   border: 0px;
   border-radius: 3px;
-  padding: 6px 12px;
+  padding: 0.5rem 1rem;
 }
 
 .btnGravar:hover {
@@ -61,7 +61,7 @@
   background-color: rgb(44, 43, 43);
   border: 0px;
   border-radius: 3px;
-  padding: 6px 12px;
+  padding: 0.5rem 1rem;
 }
 
 .btnVoltar:hover {
@@ -70,10 +70,10 @@
 }
 
 @media (width <= 768px) {
-    .metade{
+    .nomeDepartamento{
         width: 100%;
     }
-    .quarto{
+    .statusDepartamento{
         width: 100%;
     }
 }

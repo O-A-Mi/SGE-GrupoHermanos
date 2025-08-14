@@ -28,6 +28,7 @@ function NovoDepartamento() {
   function handleNovoBotao() {
     alert("Botão novo clicado")
   }
+  
 
   return (
     <>
@@ -36,11 +37,11 @@ function NovoDepartamento() {
         <h2 className="subtitle">Configuração de um novo departamento</h2>
       </div>
       <div className={styles.containerEdicao}>
-        <div className={styles.metade}>
+        <div className={styles.nomeDepartamento}>
           <div className={styles.labelBig}><strong>Nome</strong></div>
           <InputPadrao type='text' />
         </div>
-        <div className={styles.quarto}>
+        <div className={styles.statusDepartamento}>
           <div className={styles.label}><strong>Status</strong>
           </div>
           <div>

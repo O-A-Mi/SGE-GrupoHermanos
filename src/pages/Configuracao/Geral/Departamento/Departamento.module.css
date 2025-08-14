@@ -12,13 +12,7 @@
 
 .label{
     font: bolder;
-    padding-bottom: 10px;
-}
-
-.select{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-color: rgb(255, 0, 0);
-    padding: 10px;
+    padding-bottom: 0.5rem;
 }
 
 .pesquisaEStatus{

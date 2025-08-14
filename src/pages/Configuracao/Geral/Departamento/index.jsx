@@ -63,7 +63,7 @@ function Departamento() {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  },[])
+  }, [])
 
   const handleNavigate = useCallback((link) => {
     navigate(link);
@@ -97,7 +97,9 @@ function Departamento() {
       </div>
       <div className={styles.pesquisaEStatus}>
         <div className={styles.status}>
-          <div className={styles.label}><strong>Status</strong></div>
+          <div className={styles.label}>
+            <strong>Status</strong>
+          </div>
           <div>
             <InputPadrao
               type="select"
@@ -111,7 +113,9 @@ function Departamento() {
           </div>
         </div>
         <div className={styles.pesquisa}>
-          <div className={styles.label}><strong>Nome</strong></div>
+          <div className={styles.label}>
+            <strong>Nome</strong>
+          </div>
           <InputPadrao
             type='search'
             value={filterText}
