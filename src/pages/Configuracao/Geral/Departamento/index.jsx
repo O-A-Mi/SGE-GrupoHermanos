@@ -1,6 +1,6 @@
 import styles from './Departamento.module.css'
 import TabelaPadrao from '../../../../components/TabelaPadrao'
-import { InputPadrao, UseInputMask } from '../../../../components/InputPadrao'
+import { UseInputPadrao, UseInputMask } from '../../../../components/InputPadrao'
 import { Outlet, useLocation, useNavigate } from 'react-router'
 import { jsonRoute } from '../../../../utils/json'
 import { useCallback, useEffect, useState } from 'react'
@@ -49,7 +49,7 @@ function Departamento() {
 
   /* Hooks */
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth > 768)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const [filterSelect, setFilterSelect, filterSelectRef] = UseInputMask()
   const [filterText, setFilterText, filterTextRef] = UseInputMask()
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ function Departamento() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth > 768);
+      setIsMobile(window.innerWidth < 768);
     };
     window.addEventListener('resize', handleResize);
     return () => {
@@ -96,12 +96,10 @@ function Departamento() {
         <h2 className="subtitle">Adicione, edite ou remova departamentos</h2>
       </div>
       <div className={styles.pesquisaEStatus}>
-        <div className={styles.status}>
-          <div className={styles.label}>
-            <strong>Status</strong>
-          </div>
-          <div>
-            <InputPadrao
+        <div>
+          <div className={styles.status}>
+            <UseInputPadrao
+              label="Status"
               type="select"
               options={status}
               value={filterSelect}
@@ -109,19 +107,17 @@ function Departamento() {
               searchable={false}
               defaultSelect={false}
               onChange={setFilterSelect}
+              width={isMobile ? 100 : 25}
+            />
+            <UseInputPadrao
+              label="Nome"
+              type='search'
+              value={filterText}
+              inputRef={filterTextRef}
+              onChange={setFilterText}
+              width={isMobile ? 100 : 75}
             />
           </div>
-        </div>
-        <div className={styles.pesquisa}>
-          <div className={styles.label}>
-            <strong>Nome</strong>
-          </div>
-          <InputPadrao
-            type='search'
-            value={filterText}
-            inputRef={filterTextRef}
-            onChange={setFilterText}
-          />
         </div>
       </div>
       <div className='container'>
@@ -142,6 +138,7 @@ function Departamento() {
             showColumnsSelector: true,
             showSearch: false,
             toolbar: true,
+            showToggleView: true,
             rowOnClick: () => { handleRowClick("Linha clicada") }
           }}
         />

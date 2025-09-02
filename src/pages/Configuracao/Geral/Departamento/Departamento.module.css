@@ -26,15 +26,15 @@
 }
 
 .status{
-    width: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
 }
 
-@media (width <= 768px) {
+@media (width > 1366px) {
     .pesquisaEStatus{
         flex-direction: column;
         justify-content: flex-start;
-    }
-    .status{
-        width: 100%;
     }
 }
