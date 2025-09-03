@@ -28,4 +28,7 @@ export const jsonRoute = {
 
   //Abre Botoes Formulario
   Configuracao_Geral_AbreBotoesFormulario: "abre-botoes-formulario",
+
+  //Combo Produtos/ Serviços
+  Administrativo_Manutencao_ComboProdutoServico: "combo-produtos-servicos",
 };

@@ -72,6 +72,13 @@ const Navigator = () => {
                 <i className="fa-solid fa-gear"></i>
                 <p>Abre Botões de Formulários</p>
               </Link>
+              <Link
+                to="/configuracao/geral/combo-produtos-servicos"
+                className={styles.navLink}
+              >
+                <i className="fa-solid fa-gear"></i>
+                <p>Combo Produtos/Serviços</p>
+              </Link>
             </div>
           ) : (
             <div className={styles.navBarOptions}>
@@ -151,6 +158,14 @@ const Navigator = () => {
                           to="/configuracao/geral/abre-botoes-formulario"
                         >
                           <p>Abre Botões de Formulários</p>
+                        </Link>
+                      </div>
+                      <div>
+                        <Link
+                          className={styles.sideOption}
+                          to="/configuracao/geral/combo-produtos-servicos"
+                        >
+                          <p>Combo Produtos/Serviços</p>
                         </Link>
                       </div>
                     </div>

@@ -33,6 +33,9 @@ import NovoDocumentoArquivo from "./pages/Configuracao/Geral/TipoDeDocumentoArqu
 //Abre Botao Formulario
 import AbreBotoesFormulario from "./pages/Configuracao/Geral/AbreBotoesFormulario";
 
+//Combo Produtos/ Serviços
+import ComboProdutoServico from "./pages/Administrativo/Manutenção/ComboProdutoServico";
+
 function App() {
   return (
     <>
@@ -100,6 +103,10 @@ function App() {
               <Route
                 path={jsonRoute.Configuracao_Geral_AbreBotoesFormulario}
                 element={<AbreBotoesFormulario />}
+              />
+              <Route
+                path={jsonRoute.Administrativo_Manutencao_ComboProdutoServico}
+                element={<ComboProdutoServico />}
               />
             </Route>
           </Route>
