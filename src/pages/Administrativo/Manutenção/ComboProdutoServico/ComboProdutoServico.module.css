@@ -1,0 +1,25 @@
+.inputTabela {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+.inputContainer {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+.headerComboProdutoServico {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.contentComboProdutoServico {
+  padding: 12px;
+}
+.containerComboProdutoServico {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
