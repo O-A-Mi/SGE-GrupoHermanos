@@ -4,11 +4,15 @@ import {
   UseInputPadrao,
   UseInputMask,
 } from "../../../../components/InputPadrao";
-import { Outlet, useLocation, useNavigate } from "react-router";
+import { Outlet, Route, useLocation, useNavigate } from "react-router";
 import { jsonRoute } from "../../../../utils/json";
 import { useCallback, useEffect, useState } from "react";
 
 function ComboProdutoServico() {
+  const navigate = useNavigate();
+  const handleNavigate = (route) => {
+    navigate(route);
+  };
   const [status, setStatus, statusRef] = UseInputMask();
   const [tipoPlano, setTipoPlano, TipoPlanoRef] = UseInputMask();
   const [convenio, setConvenio, convenioRef] = UseInputMask();
@@ -140,12 +144,19 @@ function ComboProdutoServico() {
               showGuardaCampos: true,
               additionalButtons: [
                 {
-                  onClick: () => false,
+                  onClick: () =>
+                    navigate(
+                      `/${jsonRoute.Configuracao}/geral/${jsonRoute.Cadastro_Combo_Produto_Servico}`
+                    ),
                   icon: "fa fa-plus",
                   title: "Adicionar",
                 },
               ],
-              rowOnClick: () => alert("click"),
+              rowOnClick: (row, rowIndex) => {
+                navigate(
+                  `/${jsonRoute.Configuracao}/geral/${jsonRoute.Cadastro_Combo_Produto_Servico}`
+                );
+              },
               toolbarComponent: () => (
                 <div className={styles.inputTabela}>
                   <UseInputPadrao

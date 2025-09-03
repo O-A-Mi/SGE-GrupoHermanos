@@ -1,0 +1,36 @@
+.inputs {
+  display: flex;
+
+  gap: 1rem;
+}
+.containerComboProdutoServico {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 1rem;
+}
+
+.subTitle {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.contentComboProdutoServico {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.pageComboProdutoServico {
+  padding: 1rem;
+
+  border-radius: 4px;
+  width: calc(100% - 2rem);
+}
+
+.titleComboProdutoServico {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: #dadada;
+}
