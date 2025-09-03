@@ -36,6 +36,9 @@ import AbreBotoesFormulario from "./pages/Configuracao/Geral/AbreBotoesFormulari
 //Combo Produtos/ Serviços
 import ComboProdutoServico from "./pages/Administrativo/Manutenção/ComboProdutoServico";
 
+//Função Usuário
+import Funcao_Usuario from "./pages/Configuracao/Geral/FuncaoUsuario";
+
 function App() {
   return (
     <>
@@ -108,6 +111,10 @@ function App() {
                 path={jsonRoute.Administrativo_Manutencao_ComboProdutoServico}
                 element={<ComboProdutoServico />}
               />
+
+              <Route path={jsonRoute.Funcao_Usuario} element={<Funcao_Usuario />} />
+              {/* <Route path={`${jsonRoute.Funcao_Usuario}/${jsonRoute.Funcao_Usuario_Novo}`} element={<Funcao_Usuario_Novo />} />
+              <Route path={`${jsonRoute.Funcao_Usuario}/${jsonRoute.Funcao_Usuario_Edicao}`} element={<Funcao_Usuario_Edicao />} /> */}
             </Route>
           </Route>
         </Routes>

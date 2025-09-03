@@ -66,7 +66,7 @@ function Departamento() {
   }, [])
 
   const handleNavigate = useCallback((link) => {
-    navigate(link);
+    navigate(link);                      
   }, [navigate]);
 
 
