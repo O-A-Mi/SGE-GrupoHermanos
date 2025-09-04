@@ -31,6 +31,7 @@ export const jsonRoute = {
 
   //Combo Produtos/ Serviços
   Administrativo_Manutencao_ComboProdutoServico: "combo-produtos-servicos",
+  Stepper_Cadastro_Combo_Produto_Servico: "combo-produto-servico",
   Cadastro_Combo_Produto_Servico: "cadastro-produto-servico",
 
   //Função Usuário

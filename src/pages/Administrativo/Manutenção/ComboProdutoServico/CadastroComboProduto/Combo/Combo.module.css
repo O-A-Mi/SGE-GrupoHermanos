@@ -1,24 +1,28 @@
 .inputs {
   display: flex;
-
+  width: 100%;
   gap: 1rem;
+  padding-bottom: 1rem;
 }
 .containerComboProdutoServico {
   background-color: #f9f9f9;
   border: 1px solid #eee;
   padding: 1rem;
+  border-radius: 13px;
 }
 
 .subTitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #a1a1a1;
 }
 .contentComboProdutoServico {
   padding: 1rem;
   border: 1px solid #eee;
   border-radius: 4px;
   width: 100%;
+  padding-bottom: 1rem;
 }
 
 .pageComboProdutoServico {
@@ -33,4 +37,9 @@
   font-weight: bold;
   margin-bottom: 1rem;
   border-bottom: #dadada;
+}
+
+.toggleCombo {
+  width: 16%;
+  padding-bottom: 1rem;
 }

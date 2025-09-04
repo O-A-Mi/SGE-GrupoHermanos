@@ -146,7 +146,7 @@ function ComboProdutoServico() {
                 {
                   onClick: () =>
                     navigate(
-                      `/${jsonRoute.Configuracao}/geral/${jsonRoute.Cadastro_Combo_Produto_Servico}`
+                      `/${jsonRoute.Configuracao}/geral/${jsonRoute.Stepper_Cadastro_Combo_Produto_Servico}`
                     ),
                   icon: "fa fa-plus",
                   title: "Adicionar",
@@ -154,7 +154,7 @@ function ComboProdutoServico() {
               ],
               rowOnClick: (row, rowIndex) => {
                 navigate(
-                  `/${jsonRoute.Configuracao}/geral/${jsonRoute.Cadastro_Combo_Produto_Servico}`
+                  `/${jsonRoute.Configuracao}/geral/${jsonRoute.Stepper_Cadastro_Combo_Produto_Servico}`
                 );
               },
               toolbarComponent: () => (
