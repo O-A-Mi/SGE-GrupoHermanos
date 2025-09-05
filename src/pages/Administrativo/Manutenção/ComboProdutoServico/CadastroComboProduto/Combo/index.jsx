@@ -73,7 +73,7 @@ function Combo() {
     UseInputMask();
   const [codEmpresaEnvio, setCodEmpresaEnvio, codEmpresaEnvioRef] =
     UseInputMask();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -224,8 +224,9 @@ function Combo() {
                 inputRef={statusRef}
                 searchable={true}
                 defaultSelect={false}
-                width={isMobile ? 100 : 16.4}
+                width={isMobile ? 100 : 16}
                 required={true}
+                gap={isMobile ? 0 : 0.2}
               />
               <UseInputPadrao
                 type="select"
@@ -236,7 +237,8 @@ function Combo() {
                 inputRef={ordemRef}
                 searchable={true}
                 defaultSelect={false}
-                width={isMobile ? 100 : 16.4}
+                width={isMobile ? 100 : 16}
+                gap={isMobile ? 0 : 0.2}
               />
               <UseInputPadrao
                 type="select"
@@ -247,30 +249,35 @@ function Combo() {
                 inputRef={apareceRef}
                 searchable={true}
                 defaultSelect={false}
-                width={isMobile ? 100 : 16.4}
+                width={isMobile ? 100 : 16}
+                gap={isMobile ? 0 : 0.2}
               />
-              <UseInputPadrao
-                type="select"
-                label="Grupo Contratual"
-                options={GrupoOptions}
-                value={grupo}
-                onChange={setGrupo}
-                inputRef={grupoRef}
-                searchable={true}
-                defaultSelect={false}
-                width={isMobile ? 100 : 25}
-              />
-              <UseInputPadrao
-                type="select"
-                label="Tabela de Concessão"
-                options={ConcessaoOptions}
-                value={concessao}
-                onChange={setConcessao}
-                inputRef={concessaoRef}
-                searchable={true}
-                defaultSelect={false}
-                width={isMobile ? 100 : 25}
-              />
+              <div className={styles.inputs}>
+                <UseInputPadrao
+                  type="select"
+                  label="Grupo Contratual"
+                  options={GrupoOptions}
+                  value={grupo}
+                  onChange={setGrupo}
+                  inputRef={grupoRef}
+                  searchable={true}
+                  defaultSelect={false}
+                  width={isMobile ? 100 : 50}
+                  gap={isMobile ? 0 : 0.5}
+                />
+                <UseInputPadrao
+                  type="select"
+                  label="Tabela de Concessão"
+                  options={ConcessaoOptions}
+                  value={concessao}
+                  onChange={setConcessao}
+                  inputRef={concessaoRef}
+                  searchable={true}
+                  defaultSelect={false}
+                  width={isMobile ? 100 : 50}
+                  gap={isMobile ? 0 : 0.5}
+                />
+              </div>
             </div>
             <div className={styles.inputs}>
               <UseInputPadrao
@@ -473,218 +480,223 @@ function Combo() {
           </div>
           <div>
             <h1 className={styles.subTitle}>Configuração de Módulos</h1>
-            <div className={styles.inputs}>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Utiliza NºProposta Especial?"
-                  checked={propostaEspecialActive}
-                  onChange={() =>
-                    setPropostaEspecialActive(!propostaEspecialActive)
-                  }
-                />
+            <div className={styles.toggleContainer}>
+              <div className={styles.toggleContent}>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Utiliza NºProposta Especial?"
+                    checked={propostaEspecialActive}
+                    onChange={() =>
+                      setPropostaEspecialActive(!propostaEspecialActive)
+                    }
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Utiliza Vigência?"
+                    checked={utilizaVigenciaActive}
+                    onChange={() =>
+                      setUtilizaVigenciaActive(!utilizaVigenciaActive)
+                    }
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="V. no Portal do Corretor? "
+                    checked={portalCorretorActive}
+                    onChange={() =>
+                      setPortalCorretorActive(!portalCorretorActive)
+                    }
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Valida DNV?"
+                    checked={validaDnvActive}
+                    onChange={() => setValidaDnvActive(!validaDnvActive)}
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Utiliza Pro Rata?"
+                    checked={utilizaProRataActive}
+                    onChange={() =>
+                      setUtilizaProRataActive(!utilizaProRataActive)
+                    }
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Utiliza DMED?"
+                    width="16%"
+                    checked={utilizaDmedActive}
+                    onChange={() => setUtilizaDmedActive(!utilizaDmedActive)}
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Segurado têm carência?"
+                    checked={seguradoCarenciaActive}
+                    onChange={() =>
+                      setSeguradoCarenciaActive(!seguradoCarenciaActive)
+                    }
+                  />
+                </div>
               </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Utiliza por Faixa de Idade?"
-                  checked={faixaIdadeActive}
-                  onChange={() => setFaixaIdadeActive(!faixaIdadeActive)}
-                />
-              </div>
-              {faixaIdadeActive && (
-                <>
-                  <UseInputPadrao
-                    type="text"
-                    label="Custo"
-                    placeHolder="00,00"
-                    value={custo}
-                    onChange={setCusto}
-                    inputRef={custoRef}
-                    width={isMobile ? 100 : 16.4}
-                  />
-                  <UseInputPadrao
-                    type="text"
-                    label="Preço Final"
-                    placeHolder="00,00"
-                    value={precoFinal}
-                    onChange={setPrecoFinal}
-                    inputRef={precoFinalRef}
-                    required={true}
-                    width={isMobile ? 100 : 16.4}
-                  />
-                  <UseInputPadrao
-                    type="select"
-                    label="Modo da Adesão"
-                    options={ModoAdesaoOptions}
-                    value={modoAdesao}
-                    onChange={setModoAdesao}
-                    inputRef={modoAdesaoRef}
-                    searchable={true}
-                    defaultSelect={false}
-                    required={true}
-                    width={isMobile ? 100 : 16.4}
-                  />
-                  <UseInputPadrao
-                    type="text"
-                    label="Valor da Adesão "
-                    placeHolder="00,00"
-                    value={valorAdesao}
-                    onChange={setValorAdesao}
-                    inputRef={valorAdesaoRef}
-                    required={true}
-                    width={isMobile ? 100 : 16.4}
-                  />
-                </>
-              )}
-            </div>
-            <div className={styles.inputs}>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Adiciona Dependentes?"
-                  checked={adicionaDependenteActive}
-                  onChange={() =>
-                    setAdicionaDependenteActive(!adicionaDependenteActive)
-                  }
-                />
-              </div>
-              {!adicionaDependenteActive && (
-                <>
-                  <UseInputPadrao
-                    type="text"
-                    label="Limite de Dependentes"
-                    placeHolder="999"
-                    value={limiteDependentes}
-                    onChange={setLimiteDependentes}
-                    inputRef={limiteDependentesRef}
-                    width={isMobile ? 100 : 16.4}
-                  />
-                  <div className={styles.toggleCombo}>
+              <div className={styles.toggleContent}>
+                <div className={styles.toggleCombo}>
+                  <div className={styles.teste}>
                     <TogglePadrao
-                      label="Cobra Dependentes?"
-                      checked={cobraDependentesActive}
+                      label="Utiliza por Faixa de Idade?"
+                      checked={faixaIdadeActive}
+                      onChange={() => setFaixaIdadeActive(!faixaIdadeActive)}
+                    />
+                    {faixaIdadeActive && (
+                      <>
+                        <UseInputPadrao
+                          type="text"
+                          label="Custo"
+                          placeHolder="00,00"
+                          value={custo}
+                          onChange={setCusto}
+                          inputRef={custoRef}
+                          width={isMobile ? 100 : 25}
+                        />
+                        <UseInputPadrao
+                          type="text"
+                          label="Preço Final"
+                          placeHolder="00,00"
+                          value={precoFinal}
+                          onChange={setPrecoFinal}
+                          inputRef={precoFinalRef}
+                          required={true}
+                          width={isMobile ? 100 : 25}
+                        />
+                        <UseInputPadrao
+                          type="select"
+                          label="Modo da Adesão"
+                          options={ModoAdesaoOptions}
+                          value={modoAdesao}
+                          onChange={setModoAdesao}
+                          inputRef={modoAdesaoRef}
+                          searchable={true}
+                          defaultSelect={false}
+                          required={true}
+                          width={isMobile ? 100 : 25}
+                        />
+                        <UseInputPadrao
+                          type="text"
+                          label="Valor da Adesão "
+                          placeHolder="00,00"
+                          value={valorAdesao}
+                          onChange={setValorAdesao}
+                          inputRef={valorAdesaoRef}
+                          required={true}
+                          width={isMobile ? 100 : 25}
+                        />
+                      </>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <div className={styles.teste}>
+                    <TogglePadrao
+                      label="Adiciona Dependentes?"
+                      checked={adicionaDependenteActive}
                       onChange={() =>
-                        setCobraDependentesActive(!cobraDependentesActive)
+                        setAdicionaDependenteActive(!adicionaDependenteActive)
                       }
                     />
+                    {!adicionaDependenteActive && (
+                      <>
+                        <UseInputPadrao
+                          type="text"
+                          label="Limite de Dependentes"
+                          placeHolder="999"
+                          value={limiteDependentes}
+                          onChange={setLimiteDependentes}
+                          inputRef={limiteDependentesRef}
+                          width={isMobile ? 100 : 50}
+                        />
+                        <div className={styles.toggleCombo}>
+                          <TogglePadrao
+                            label="Cobra Dependentes?"
+                            checked={cobraDependentesActive}
+                            onChange={() =>
+                              setCobraDependentesActive(!cobraDependentesActive)
+                            }
+                          />
+                        </div>
+                      </>
+                    )}
                   </div>
-                </>
-              )}
-            </div>
-            <div className={styles.inputs}>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Utiliza Vigência?"
-                  checked={utilizaVigenciaActive}
-                  onChange={() =>
-                    setUtilizaVigenciaActive(!utilizaVigenciaActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="V. no Portal do Corretor? "
-                  checked={portalCorretorActive}
-                  onChange={() =>
-                    setPortalCorretorActive(!portalCorretorActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Valida DNV?"
-                  checked={validaDnvActive}
-                  onChange={() => setValidaDnvActive(!validaDnvActive)}
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Utiliza Pro Rata?"
-                  checked={utilizaProRataActive}
-                  onChange={() =>
-                    setUtilizaProRataActive(!utilizaProRataActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Utiliza DMED?"
-                  width="16%"
-                  checked={utilizaDmedActive}
-                  onChange={() => setUtilizaDmedActive(!utilizaDmedActive)}
-                />
-              </div>
-            </div>
-            <div className={styles.inputs}>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Segurado têm carência?"
-                  checked={seguradoCarenciaActive}
-                  onChange={() =>
-                    setSeguradoCarenciaActive(!seguradoCarenciaActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Dependente têm carência?"
-                  checked={dependenteCarenciaActive}
-                  onChange={() =>
-                    setDependenteCarenciaActive(!dependenteCarenciaActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Usa Auditoria de Perguntas?"
-                  checked={auditoriaPerguntasActive}
-                  onChange={() =>
-                    setAuditoriaPerguntasActive(!auditoriaPerguntasActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Envia Cadastros à S. Farmácia?"
-                  checked={cadastroFarmaciaActive}
-                  onChange={() =>
-                    setCadastroFarmaciaActive(!cadastroFarmaciaActive)
-                  }
-                />
-              </div>
-            </div>
-            <div className={styles.inputs}>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Reajuste do Contrato?"
-                  checked={reajusteContratoActive}
-                  onChange={() =>
-                    setReajusteContratoActive(!reajusteContratoActive)
-                  }
-                />
-              </div>
-              <div className={styles.toggleCombo}>
-                <TogglePadrao
-                  label="Reajuste por Faixa?"
-                  checked={reajusteFaixaActive}
-                  onChange={() => setReajusteFaixaActive(!reajusteFaixaActive)}
-                />
-              </div>
-              {!reajusteFaixaActive && (
-                <>
-                  <UseInputPadrao
-                    type="select"
-                    label="Modo do Reajuste por Faixa"
-                    options={ModoReajusteFaixaOptions}
-                    value={modoReajusteFaixa}
-                    onChange={setModoReajusteFaixa}
-                    inputRef={modoReajusteFaixaRef}
-                    searchable={true}
-                    defaultSelect={false}
-                    width={isMobile ? 100 : 16.4}
+                </div>
+                <div>
+                  <div className={styles.teste}>
+                    <TogglePadrao
+                      label="Reajuste por Faixa?"
+                      checked={reajusteFaixaActive}
+                      onChange={() =>
+                        setReajusteFaixaActive(!reajusteFaixaActive)
+                      }
+                    />
+                    {!reajusteFaixaActive && (
+                      <>
+                        <UseInputPadrao
+                          type="select"
+                          label="Modo do Reajuste por Faixa"
+                          options={ModoReajusteFaixaOptions}
+                          value={modoReajusteFaixa}
+                          onChange={setModoReajusteFaixa}
+                          inputRef={modoReajusteFaixaRef}
+                          searchable={true}
+                          defaultSelect={false}
+                          width={isMobile ? 100 : 50}
+                        />
+                      </>
+                    )}
+                  </div>
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Dependente têm carência?"
+                    checked={dependenteCarenciaActive}
+                    onChange={() =>
+                      setDependenteCarenciaActive(!dependenteCarenciaActive)
+                    }
                   />
-                </>
-              )}
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Usa Auditoria de Perguntas?"
+                    checked={auditoriaPerguntasActive}
+                    onChange={() =>
+                      setAuditoriaPerguntasActive(!auditoriaPerguntasActive)
+                    }
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Envia Cadastros à S. Farmácia?"
+                    checked={cadastroFarmaciaActive}
+                    onChange={() =>
+                      setCadastroFarmaciaActive(!cadastroFarmaciaActive)
+                    }
+                  />
+                </div>
+                <div className={styles.toggleCombo}>
+                  <TogglePadrao
+                    label="Reajuste do Contrato?"
+                    checked={reajusteContratoActive}
+                    onChange={() =>
+                      setReajusteContratoActive(!reajusteContratoActive)
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
+
           <div>
             <h1 className={styles.subTitle}>Informações adicionais</h1>
             <div className={styles.inputs}>
