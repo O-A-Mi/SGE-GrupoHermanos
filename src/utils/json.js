@@ -36,6 +36,5 @@ export const jsonRoute = {
 
   //Função Usuário
   Funcao_Usuario: "funcao-usuario",
-  Funcao_Usuario_Novo: "nova-funcao-usuario",
-  Funcao_Usuario_Edicao: "edicao-funcao-usuario",
+  Funcao_Usuario_Info: "funcao-usuario-info",
 };

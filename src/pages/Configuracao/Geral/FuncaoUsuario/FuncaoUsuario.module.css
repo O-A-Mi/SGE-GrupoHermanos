@@ -1,0 +1,40 @@
+.grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 50px;
+}
+
+.option{
+    border: 0;
+}
+
+.label{
+    font: bolder;
+    padding-bottom: 0.5rem;
+}
+
+.pesquisaEStatus{
+    margin: 2rem 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.pesquisa{
+    width: 100%;
+}
+
+.status{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+@media (width > 1366px) {
+    .pesquisaEStatus{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}

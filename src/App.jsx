@@ -40,6 +40,7 @@ import CadastroComboProduto from "./pages/Administrativo/Manutenção/ComboProdu
 
 //Função Usuário
 import Funcao_Usuario from "./pages/Configuracao/Geral/FuncaoUsuario";
+import Funcao_Usuario_Info from "./pages/Configuracao/Geral/FuncaoUsuario/components";
 
 function App() {
   return (
@@ -125,8 +126,7 @@ function App() {
                 path={jsonRoute.Funcao_Usuario}
                 element={<Funcao_Usuario />}
               />
-              {/* <Route path={`${jsonRoute.Funcao_Usuario}/${jsonRoute.Funcao_Usuario_Novo}`} element={<Funcao_Usuario_Novo />} />
-              <Route path={`${jsonRoute.Funcao_Usuario}/${jsonRoute.Funcao_Usuario_Edicao}`} element={<Funcao_Usuario_Edicao />} /> */}
+              <Route path={`${jsonRoute.Funcao_Usuario}/${jsonRoute.Funcao_Usuario_Info}`} element={<Funcao_Usuario />} />
             </Route>
           </Route>
         </Routes>
